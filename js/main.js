@@ -21,6 +21,7 @@ document.addEventListener("DOMContentLoaded", async () => {
       window.location.pathname.includes("/blogs") ||
       window.location.pathname.includes("/bimbel-spesialis-kedokteran") ||
       window.location.pathname.includes("/lolos-ptn-favorit")      ||
+      window.location.pathname.includes("/lolos-sma-favorit")      ||
       window.location.pathname.includes("/kontak-kami")
       ? ".."
       : ".";
