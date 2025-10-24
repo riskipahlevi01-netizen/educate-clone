@@ -1,0 +1,1148 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+	<meta charset="UTF-8">
+
+	<script src="/js/head-loader.js"></script>
+
+	<script>if (navigator.userAgent.match(/MSIE|Internet Explorer/i) || navigator.userAgent.match(/Trident\/7\..*?rv:11/i)) { var href = document.location.href; if (!href.match(/[?&]nowprocket/)) { if (href.indexOf("?") == -1) { if (href.indexOf("#") == -1) { document.location.href = href + "?nowprocket=1" } else { document.location.href = href.replace("#", "?nowprocket=1#") } } else { if (href.indexOf("#") == -1) { document.location.href = href + "&nowprocket=1" } else { document.location.href = href.replace("#", "&nowprocket=1#") } } } }</script>
+	<script>(() => { class RocketLazyLoadScripts { constructor() { this.v = "2.0.4", this.userEvents = ["keydown", "keyup", "mousedown", "mouseup", "mousemove", "mouseover", "mouseout", "touchmove", "touchstart", "touchend", "touchcancel", "wheel", "click", "dblclick", "input"], this.attributeEvents = ["onblur", "onclick", "oncontextmenu", "ondblclick", "onfocus", "onmousedown", "onmouseenter", "onmouseleave", "onmousemove", "onmouseout", "onmouseover", "onmouseup", "onmousewheel", "onscroll", "onsubmit"] } async t() { this.i(), this.o(), /iP(ad|hone)/.test(navigator.userAgent) && this.h(), this.u(), this.l(this), this.m(), this.k(this), this.p(this), this._(), await Promise.all([this.R(), this.L()]), this.lastBreath = Date.now(), this.S(this), this.P(), this.D(), this.O(), this.M(), await this.C(this.delayedScripts.normal), await this.C(this.delayedScripts.defer), await this.C(this.delayedScripts.async), await this.T(), await this.F(), await this.j(), await this.A(), window.dispatchEvent(new Event("rocket-allScriptsLoaded")), this.everythingLoaded = !0, this.lastTouchEnd && await new Promise(t => setTimeout(t, 500 - Date.now() + this.lastTouchEnd)), this.I(), this.H(), this.U(), this.W() } i() { this.CSPIssue = sessionStorage.getItem("rocketCSPIssue"), document.addEventListener("securitypolicyviolation", t => { this.CSPIssue || "script-src-elem" !== t.violatedDirective || "data" !== t.blockedURI || (this.CSPIssue = !0, sessionStorage.setItem("rocketCSPIssue", !0)) }, { isRocket: !0 }) } o() { window.addEventListener("pageshow", t => { this.persisted = t.persisted, this.realWindowLoadedFired = !0 }, { isRocket: !0 }), window.addEventListener("pagehide", () => { this.onFirstUserAction = null }, { isRocket: !0 }) } h() { let t; function e(e) { t = e } window.addEventListener("touchstart", e, { isRocket: !0 }), window.addEventListener("touchend", function i(o) { o.changedTouches[0] && t.changedTouches[0] && Math.abs(o.changedTouches[0].pageX - t.changedTouches[0].pageX) < 10 && Math.abs(o.changedTouches[0].pageY - t.changedTouches[0].pageY) < 10 && o.timeStamp - t.timeStamp < 200 && (window.removeEventListener("touchstart", e, { isRocket: !0 }), window.removeEventListener("touchend", i, { isRocket: !0 }), "INPUT" === o.target.tagName && "text" === o.target.type || (o.target.dispatchEvent(new TouchEvent("touchend", { target: o.target, bubbles: !0 })), o.target.dispatchEvent(new MouseEvent("mouseover", { target: o.target, bubbles: !0 })), o.target.dispatchEvent(new PointerEvent("click", { target: o.target, bubbles: !0, cancelable: !0, detail: 1, clientX: o.changedTouches[0].clientX, clientY: o.changedTouches[0].clientY })), event.preventDefault())) }, { isRocket: !0 }) } q(t) { this.userActionTriggered || ("mousemove" !== t.type || this.firstMousemoveIgnored ? "keyup" === t.type || "mouseover" === t.type || "mouseout" === t.type || (this.userActionTriggered = !0, this.onFirstUserAction && this.onFirstUserAction()) : this.firstMousemoveIgnored = !0), "click" === t.type && t.preventDefault(), t.stopPropagation(), t.stopImmediatePropagation(), "touchstart" === this.lastEvent && "touchend" === t.type && (this.lastTouchEnd = Date.now()), "click" === t.type && (this.lastTouchEnd = 0), this.lastEvent = t.type, t.composedPath && t.composedPath()[0].getRootNode() instanceof ShadowRoot && (t.rocketTarget = t.composedPath()[0]), this.savedUserEvents.push(t) } u() { this.savedUserEvents = [], this.userEventHandler = this.q.bind(this), this.userEvents.forEach(t => window.addEventListener(t, this.userEventHandler, { passive: !1, isRocket: !0 })), document.addEventListener("visibilitychange", this.userEventHandler, { isRocket: !0 }) } U() { this.userEvents.forEach(t => window.removeEventListener(t, this.userEventHandler, { passive: !1, isRocket: !0 })), document.removeEventListener("visibilitychange", this.userEventHandler, { isRocket: !0 }), this.savedUserEvents.forEach(t => { (t.rocketTarget || t.target).dispatchEvent(new window[t.constructor.name](t.type, t)) }) } m() { const t = "return false", e = Array.from(this.attributeEvents, t => "data-rocket-" + t), i = "[" + this.attributeEvents.join("],[") + "]", o = "[data-rocket-" + this.attributeEvents.join("],[data-rocket-") + "]", s = (e, i, o) => { o && o !== t && (e.setAttribute("data-rocket-" + i, o), e["rocket" + i] = new Function("event", o), e.setAttribute(i, t)) }; new MutationObserver(t => { for (const n of t) "attributes" === n.type && (n.attributeName.startsWith("data-rocket-") || this.everythingLoaded ? n.attributeName.startsWith("data-rocket-") && this.everythingLoaded && this.N(n.target, n.attributeName.substring(12)) : s(n.target, n.attributeName, n.target.getAttribute(n.attributeName))), "childList" === n.type && n.addedNodes.forEach(t => { if (t.nodeType === Node.ELEMENT_NODE) if (this.everythingLoaded) for (const i of [t, ...t.querySelectorAll(o)]) for (const t of i.getAttributeNames()) e.includes(t) && this.N(i, t.substring(12)); else for (const e of [t, ...t.querySelectorAll(i)]) for (const t of e.getAttributeNames()) this.attributeEvents.includes(t) && s(e, t, e.getAttribute(t)) }) }).observe(document, { subtree: !0, childList: !0, attributeFilter: [...this.attributeEvents, ...e] }) } I() { this.attributeEvents.forEach(t => { document.querySelectorAll("[data-rocket-" + t + "]").forEach(e => { this.N(e, t) }) }) } N(t, e) { const i = t.getAttribute("data-rocket-" + e); i && (t.setAttribute(e, i), t.removeAttribute("data-rocket-" + e)) } k(t) { Object.defineProperty(HTMLElement.prototype, "onclick", { get() { return this.rocketonclick || null }, set(e) { this.rocketonclick = e, this.setAttribute(t.everythingLoaded ? "onclick" : "data-rocket-onclick", "this.rocketonclick(event)") } }) } S(t) { function e(e, i) { let o = e[i]; e[i] = null, Object.defineProperty(e, i, { get: () => o, set(s) { t.everythingLoaded ? o = s : e["rocket" + i] = o = s } }) } e(document, "onreadystatechange"), e(window, "onload"), e(window, "onpageshow"); try { Object.defineProperty(document, "readyState", { get: () => t.rocketReadyState, set(e) { t.rocketReadyState = e }, configurable: !0 }), document.readyState = "loading" } catch (t) { console.log("WPRocket DJE readyState conflict, bypassing") } } l(t) { this.originalAddEventListener = EventTarget.prototype.addEventListener, this.originalRemoveEventListener = EventTarget.prototype.removeEventListener, this.savedEventListeners = [], EventTarget.prototype.addEventListener = function (e, i, o) { o && o.isRocket || !t.B(e, this) && !t.userEvents.includes(e) || t.B(e, this) && !t.userActionTriggered || e.startsWith("rocket-") || t.everythingLoaded ? t.originalAddEventListener.call(this, e, i, o) : (t.savedEventListeners.push({ target: this, remove: !1, type: e, func: i, options: o }), "mouseenter" !== e && "mouseleave" !== e || t.originalAddEventListener.call(this, e, t.savedUserEvents.push, o)) }, EventTarget.prototype.removeEventListener = function (e, i, o) { o && o.isRocket || !t.B(e, this) && !t.userEvents.includes(e) || t.B(e, this) && !t.userActionTriggered || e.startsWith("rocket-") || t.everythingLoaded ? t.originalRemoveEventListener.call(this, e, i, o) : t.savedEventListeners.push({ target: this, remove: !0, type: e, func: i, options: o }) } } J(t, e) { this.savedEventListeners = this.savedEventListeners.filter(i => { let o = i.type, s = i.target || window; return e !== o || t !== s || (this.B(o, s) && (i.type = "rocket-" + o), this.$(i), !1) }) } H() { EventTarget.prototype.addEventListener = this.originalAddEventListener, EventTarget.prototype.removeEventListener = this.originalRemoveEventListener, this.savedEventListeners.forEach(t => this.$(t)) } $(t) { t.remove ? this.originalRemoveEventListener.call(t.target, t.type, t.func, t.options) : this.originalAddEventListener.call(t.target, t.type, t.func, t.options) } p(t) { let e; function i(e) { return t.everythingLoaded ? e : e.split(" ").map(t => "load" === t || t.startsWith("load.") ? "rocket-jquery-load" : t).join(" ") } function o(o) { function s(e) { const s = o.fn[e]; o.fn[e] = o.fn.init.prototype[e] = function () { return this[0] === window && t.userActionTriggered && ("string" == typeof arguments[0] || arguments[0] instanceof String ? arguments[0] = i(arguments[0]) : "object" == typeof arguments[0] && Object.keys(arguments[0]).forEach(t => { const e = arguments[0][t]; delete arguments[0][t], arguments[0][i(t)] = e })), s.apply(this, arguments), this } } if (o && o.fn && !t.allJQueries.includes(o)) { const e = { DOMContentLoaded: [], "rocket-DOMContentLoaded": [] }; for (const t in e) document.addEventListener(t, () => { e[t].forEach(t => t()) }, { isRocket: !0 }); o.fn.ready = o.fn.init.prototype.ready = function (i) { function s() { parseInt(o.fn.jquery) > 2 ? setTimeout(() => i.bind(document)(o)) : i.bind(document)(o) } return "function" == typeof i && (t.realDomReadyFired ? !t.userActionTriggered || t.fauxDomReadyFired ? s() : e["rocket-DOMContentLoaded"].push(s) : e.DOMContentLoaded.push(s)), o([]) }, s("on"), s("one"), s("off"), t.allJQueries.push(o) } e = o } t.allJQueries = [], o(window.jQuery), Object.defineProperty(window, "jQuery", { get: () => e, set(t) { o(t) } }) } P() { const t = new Map; document.write = document.writeln = function (e) { const i = document.currentScript, o = document.createRange(), s = i.parentElement; let n = t.get(i); void 0 === n && (n = i.nextSibling, t.set(i, n)); const c = document.createDocumentFragment(); o.setStart(c, 0), c.appendChild(o.createContextualFragment(e)), s.insertBefore(c, n) } } async R() { return new Promise(t => { this.userActionTriggered ? t() : this.onFirstUserAction = t }) } async L() { return new Promise(t => { document.addEventListener("DOMContentLoaded", () => { this.realDomReadyFired = !0, t() }, { isRocket: !0 }) }) } async j() { return this.realWindowLoadedFired ? Promise.resolve() : new Promise(t => { window.addEventListener("load", t, { isRocket: !0 }) }) } M() { this.pendingScripts = []; this.scriptsMutationObserver = new MutationObserver(t => { for (const e of t) e.addedNodes.forEach(t => { "SCRIPT" !== t.tagName || t.noModule || t.isWPRocket || this.pendingScripts.push({ script: t, promise: new Promise(e => { const i = () => { const i = this.pendingScripts.findIndex(e => e.script === t); i >= 0 && this.pendingScripts.splice(i, 1), e() }; t.addEventListener("load", i, { isRocket: !0 }), t.addEventListener("error", i, { isRocket: !0 }), setTimeout(i, 1e3) }) }) }) }), this.scriptsMutationObserver.observe(document, { childList: !0, subtree: !0 }) } async F() { await this.X(), this.pendingScripts.length ? (await this.pendingScripts[0].promise, await this.F()) : this.scriptsMutationObserver.disconnect() } D() { this.delayedScripts = { normal: [], async: [], defer: [] }, document.querySelectorAll("script[type$=rocketlazyloadscript]").forEach(t => { t.hasAttribute("data-rocket-src") ? t.hasAttribute("async") && !1 !== t.async ? this.delayedScripts.async.push(t) : t.hasAttribute("defer") && !1 !== t.defer || "module" === t.getAttribute("data-rocket-type") ? this.delayedScripts.defer.push(t) : this.delayedScripts.normal.push(t) : this.delayedScripts.normal.push(t) }) } async _() { await this.L(); let t = []; document.querySelectorAll("script[type$=rocketlazyloadscript][data-rocket-src]").forEach(e => { let i = e.getAttribute("data-rocket-src"); if (i && !i.startsWith("data:")) { i.startsWith("//") && (i = location.protocol + i); try { const o = new URL(i).origin; o !== location.origin && t.push({ src: o, crossOrigin: e.crossOrigin || "module" === e.getAttribute("data-rocket-type") }) } catch (t) { } } }), t = [...new Map(t.map(t => [JSON.stringify(t), t])).values()], this.Y(t, "preconnect") } async G(t) { if (await this.K(), !0 !== t.noModule || !("noModule" in HTMLScriptElement.prototype)) return new Promise(e => { let i; function o() { (i || t).setAttribute("data-rocket-status", "executed"), e() } try { if (navigator.userAgent.includes("Firefox/") || "" === navigator.vendor || this.CSPIssue) i = document.createElement("script"), [...t.attributes].forEach(t => { let e = t.nodeName; "type" !== e && ("data-rocket-type" === e && (e = "type"), "data-rocket-src" === e && (e = "src"), i.setAttribute(e, t.nodeValue)) }), t.text && (i.text = t.text), t.nonce && (i.nonce = t.nonce), i.hasAttribute("src") ? (i.addEventListener("load", o, { isRocket: !0 }), i.addEventListener("error", () => { i.setAttribute("data-rocket-status", "failed-network"), e() }, { isRocket: !0 }), setTimeout(() => { i.isConnected || e() }, 1)) : (i.text = t.text, o()), i.isWPRocket = !0, t.parentNode.replaceChild(i, t); else { const i = t.getAttribute("data-rocket-type"), s = t.getAttribute("data-rocket-src"); i ? (t.type = i, t.removeAttribute("data-rocket-type")) : t.removeAttribute("type"), t.addEventListener("load", o, { isRocket: !0 }), t.addEventListener("error", i => { this.CSPIssue && i.target.src.startsWith("data:") ? (console.log("WPRocket: CSP fallback activated"), t.removeAttribute("src"), this.G(t).then(e)) : (t.setAttribute("data-rocket-status", "failed-network"), e()) }, { isRocket: !0 }), s ? (t.fetchPriority = "high", t.removeAttribute("data-rocket-src"), t.src = s) : t.src = "data:text/javascript;base64," + window.btoa(unescape(encodeURIComponent(t.text))) } } catch (i) { t.setAttribute("data-rocket-status", "failed-transform"), e() } }); t.setAttribute("data-rocket-status", "skipped") } async C(t) { const e = t.shift(); return e ? (e.isConnected && await this.G(e), this.C(t)) : Promise.resolve() } O() { this.Y([...this.delayedScripts.normal, ...this.delayedScripts.defer, ...this.delayedScripts.async], "preload") } Y(t, e) { this.trash = this.trash || []; let i = !0; var o = document.createDocumentFragment(); t.forEach(t => { const s = t.getAttribute && t.getAttribute("data-rocket-src") || t.src; if (s && !s.startsWith("data:")) { const n = document.createElement("link"); n.href = s, n.rel = e, "preconnect" !== e && (n.as = "script", n.fetchPriority = i ? "high" : "low"), t.getAttribute && "module" === t.getAttribute("data-rocket-type") && (n.crossOrigin = !0), t.crossOrigin && (n.crossOrigin = t.crossOrigin), t.integrity && (n.integrity = t.integrity), t.nonce && (n.nonce = t.nonce), o.appendChild(n), this.trash.push(n), i = !1 } }), document.head.appendChild(o) } W() { this.trash.forEach(t => t.remove()) } async T() { try { document.readyState = "interactive" } catch (t) { } this.fauxDomReadyFired = !0; try { await this.K(), this.J(document, "readystatechange"), document.dispatchEvent(new Event("rocket-readystatechange")), await this.K(), document.rocketonreadystatechange && document.rocketonreadystatechange(), await this.K(), this.J(document, "DOMContentLoaded"), document.dispatchEvent(new Event("rocket-DOMContentLoaded")), await this.K(), this.J(window, "DOMContentLoaded"), window.dispatchEvent(new Event("rocket-DOMContentLoaded")) } catch (t) { console.error(t) } } async A() { try { document.readyState = "complete" } catch (t) { } try { await this.K(), this.J(document, "readystatechange"), document.dispatchEvent(new Event("rocket-readystatechange")), await this.K(), document.rocketonreadystatechange && document.rocketonreadystatechange(), await this.K(), this.J(window, "load"), window.dispatchEvent(new Event("rocket-load")), await this.K(), window.rocketonload && window.rocketonload(), await this.K(), this.allJQueries.forEach(t => t(window).trigger("rocket-jquery-load")), await this.K(), this.J(window, "pageshow"); const t = new Event("rocket-pageshow"); t.persisted = this.persisted, window.dispatchEvent(t), await this.K(), window.rocketonpageshow && window.rocketonpageshow({ persisted: this.persisted }) } catch (t) { console.error(t) } } async K() { Date.now() - this.lastBreath > 45 && (await this.X(), this.lastBreath = Date.now()) } async X() { return document.hidden ? new Promise(t => setTimeout(t)) : new Promise(t => requestAnimationFrame(t)) } B(t, e) { return e === document && "readystatechange" === t || (e === document && "DOMContentLoaded" === t || (e === window && "DOMContentLoaded" === t || (e === window && "load" === t || e === window && "pageshow" === t))) } static run() { (new RocketLazyLoadScripts).t() } } RocketLazyLoadScripts.run() })();</script>
+
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- Search Engine Optimization by Rank Math PRO - https://rankmath.com/ -->
+	<title>Blogs - Educate</title>
+	<link crossorigin data-rocket-preconnect href="https://analytics.tiktok.com" rel="preconnect">
+	<link crossorigin data-rocket-preconnect href="https://connect.facebook.net" rel="preconnect">
+	<link crossorigin data-rocket-preconnect href="https://www.google-analytics.com" rel="preconnect">
+	<link crossorigin data-rocket-preconnect href="https://www.googletagmanager.com" rel="preconnect">
+
+
+	<link rel="preload" data-rocket-preload as="image"
+		href="/wp-content/uploads/2025/02/13e7c2fe-629b-475c-acdf-74e202354858.webp" fetchpriority="high">
+	<meta name="description" content="Educate Blog" />
+	<meta name="robots" content="index, follow, max-snippet:-1, max-video-preview:-1, max-image-preview:large" />
+	<link rel="canonical" href="/blogs" />
+	<meta property="og:locale" content="en_US" />
+	<meta property="og:type" content="article" />
+	<meta property="og:title" content="Blogs - Educate" />
+	<meta property="og:description" content="Educate Blog" />
+	<meta property="og:url" content="/blogs" />
+	<meta property="og:site_name" content="Educate" />
+	<meta property="og:updated_time" content="2025-04-15T14:29:14+07:00" />
+	<meta property="og:image" content="/wp-content/uploads/2025/03/idea-icon-poster-1.webp" />
+	<meta property="og:image:secure_url" content="/wp-content/uploads/2025/03/idea-icon-poster-1.webp" />
+	<meta property="og:image:width" content="626" />
+	<meta property="og:image:height" content="626" />
+	<meta property="og:image:alt" content="Blogs" />
+	<meta property="og:image:type" content="image/webp" />
+	<meta property="article:published_time" content="2024-07-08T14:58:32+07:00" />
+	<meta property="article:modified_time" content="2025-04-15T14:29:14+07:00" />
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:title" content="Blogs - Educate" />
+	<meta name="twitter:description" content="Educate Blog" />
+	<meta name="twitter:image" content="/wp-content/uploads/2025/03/idea-icon-poster-1.webp" />
+	<meta name="twitter:label1" content="Time to read" />
+	<meta name="twitter:data1" content="Less than a minute" />
+	<script type="application/ld+json"
+		class="rank-math-schema-pro">{"@context":"https://schema.org","@graph":[{"@type":["Person","Organization"],"@id":"https://educate.co.id/#person","name":"Educate","logo":{"@type":"ImageObject","@id":"https://educate.co.id/#logo","url":"https://educate.co.id/wp-content/uploads/2024/07/6-tranparant-flat-vert-ye-6867583411069-e1751603485658-150x150.webp","contentUrl":"https://educate.co.id/wp-content/uploads/2024/07/6-tranparant-flat-vert-ye-6867583411069-e1751603485658-150x150.webp","caption":"Educate","inLanguage":"en-US"},"image":{"@type":"ImageObject","@id":"https://educate.co.id/#logo","url":"https://educate.co.id/wp-content/uploads/2024/07/6-tranparant-flat-vert-ye-6867583411069-e1751603485658-150x150.webp","contentUrl":"https://educate.co.id/wp-content/uploads/2024/07/6-tranparant-flat-vert-ye-6867583411069-e1751603485658-150x150.webp","caption":"Educate","inLanguage":"en-US"}},{"@type":"WebSite","@id":"https://educate.co.id/#website","url":"https://educate.co.id","name":"Educate","publisher":{"@id":"https://educate.co.id/#person"},"inLanguage":"en-US"},{"@type":"ImageObject","@id":"/wp-content/uploads/2025/03/idea-icon-poster-1.webp","url":"/wp-content/uploads/2025/03/idea-icon-poster-1.webp","width":"200","height":"200","inLanguage":"en-US"},{"@type":"WebPage","@id":"/blogs#webpage","url":"/blogs","name":"Blogs - Educate","datePublished":"2024-07-08T14:58:32+07:00","dateModified":"2025-04-15T14:29:14+07:00","isPartOf":{"@id":"https://educate.co.id/#website"},"primaryImageOfPage":{"@id":"/wp-content/uploads/2025/03/idea-icon-poster-1.webp"},"inLanguage":"en-US"},{"@type":"Person","@id":"https://educate.co.id/author/educate/","name":"admin","url":"https://educate.co.id/author/educate/","image":{"@type":"ImageObject","@id":"https://secure.gravatar.com/avatar/b3223a5692a58383c906c83df2e3294fba1d82f43fcc415f60015679115cacaa?s=96&amp;d=mm&amp;r=g","url":"https://secure.gravatar.com/avatar/b3223a5692a58383c906c83df2e3294fba1d82f43fcc415f60015679115cacaa?s=96&amp;d=mm&amp;r=g","caption":"admin","inLanguage":"en-US"},"sameAs":["https://educate.co.id"]},{"@type":"Article","headline":"Blogs - Educate","datePublished":"2024-07-08T14:58:32+07:00","dateModified":"2025-04-15T14:29:14+07:00","author":{"@id":"https://educate.co.id/author/educate/","name":"admin"},"publisher":{"@id":"https://educate.co.id/#person"},"description":"Educate Blog","name":"Blogs - Educate","@id":"/blogs#richSnippet","isPartOf":{"@id":"/blogs#webpage"},"image":{"@id":"/wp-content/uploads/2025/03/idea-icon-poster-1.webp"},"inLanguage":"en-US","mainEntityOfPage":{"@id":"/blogs#webpage"}}]}</script>
+	<!-- /Rank Math WordPress SEO plugin -->
+
+
+	<link rel="alternate" type="application/rss+xml" title="Educate &raquo; Feed" href="d/feed/" />
+	<link rel="alternate" type="application/rss+xml" title="Educate &raquo; Comments Feed" href="/comments/feed/" />
+
+
+	<link rel='stylesheet' id='elementor-frontend-css'
+		href='/wp-content/plugins/elementor/assets/css/frontend.min.css?ver=3.32.4' media='all' />
+
+
+
+
+	<link rel='stylesheet' id='elementor-post-49801-css'
+		href='/wp-content/cache/background-css/1/educate.co.id/wp-content/uploads/elementor/css/post-49801.css?ver=1759985892&wpr_t=1761279568'
+		media='all' />
+	<link rel='stylesheet' id='elementor-post-56439-css'
+		href='/wp-content/cache/background-css/1/educate.co.id/wp-content/uploads/elementor/css/post-56439.css?ver=1759981027&wpr_t=1761279568'
+		media='all' />
+	<link rel='stylesheet' id='elementor-post-56591-css'
+		href='/wp-content/cache/background-css/1/educate.co.id/wp-content/uploads/elementor/css/post-56591.css?ver=1759981027&wpr_t=1761279568'
+		media='all' />
+	<link rel='stylesheet' id='generate-offside-css'
+		href='/wp-content/plugins/gp-premium/menu-plus/functions/css/offside.min.css?ver=2.5.5' media='all' />
+
+	<script type="rocketlazyloadscript" data-rocket-src="/wp-includes/js/jquery/jquery.min.js?ver=3.7.1"
+		id="jquery-core-js" data-rocket-defer defer></script>
+	<script type="rocketlazyloadscript" data-rocket-src="/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.4.1"
+		id="jquery-migrate-js" data-rocket-defer defer></script>
+
+	<!-- Google Tag Manager -->
+	<script type="rocketlazyloadscript">(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-TQMLND6');</script>
+	<!-- End Google Tag Manager -->
+	<meta name="generator"
+		content="Elementor 3.32.4; features: e_font_icon_svg, additional_custom_breakpoints; settings: css_print_method-external, google_font-enabled, font_display-swap">
+
+	<!-- Facebook Pixel Code -->
+	<script type="rocketlazyloadscript">
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '901661098314455');
+  fbq('track', 'PageView');
+</script>
+	<noscript>
+		<img height="1" width="1" style="display:none"
+			src="https://www.facebook.com/tr?id=901661098314455&ev=PageView&noscript=1" />
+	</noscript>
+	<!-- End Facebook Pixel Code -->
+
+	<noscript>
+		<style id="rocket-lazyload-nojs-css">
+			.rll-youtube-player,
+			[data-lazy-src] {
+				display: none !important;
+			}
+		</style>
+	</noscript>
+	<style id="wpr-lazyload-bg-exclusion">
+		.elementor-49801 .elementor-element.elementor-element-6f6467a::before,
+		.elementor-49801 .elementor-element.elementor-element-6f6467a>.elementor-background-video-container::before,
+		.elementor-49801 .elementor-element.elementor-element-6f6467a>.e-con-inner>.elementor-background-video-container::before,
+		.elementor-49801 .elementor-element.elementor-element-6f6467a>.elementor-background-slideshow::before,
+		.elementor-49801 .elementor-element.elementor-element-6f6467a>.e-con-inner>.elementor-background-slideshow::before,
+		.elementor-49801 .elementor-element.elementor-element-6f6467a>.elementor-motion-effects-container>.elementor-motion-effects-layer::before {
+			--wpr-bg-f6c04afe-383f-45af-9971-9f2d0f0d7fc8: url('/wp-content/uploads/2025/02/13e7c2fe-629b-475c-acdf-74e202354858.webp');
+		}
+	</style>
+
+</head>
+
+<body
+	class="wp-singular page-template page-template-elementor_header_footer page page-id-49801 wp-custom-logo wp-embed-responsive wp-theme-generatepress post-image-aligned-center slideout-enabled slideout-mobile sticky-menu-fade eio-default no-sidebar nav-float-right separate-containers header-aligned-left dropdown-hover elementor-default elementor-template-full-width elementor-kit-97 elementor-page elementor-page-49801 full-width-content"
+	itemtype="https://schema.org/WebPage" itemscope>
+	<a class="screen-reader-text skip-link" href="#content" title="Skip to content">Skip to content</a>
+	<header></header>
+
+	<div class="site grid-container container hfeed" id="page">
+		<div class="site-content" id="content">
+			<div data-elementor-type="wp-page" data-elementor-id="49801" class="elementor elementor-49801"
+				data-elementor-post-type="page">
+				<div class="elementor-element elementor-element-8d604eb e-flex e-con-boxed e-con e-parent"
+					data-id="8d604eb" data-element_type="container"
+					data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+					<div class="e-con-inner">
+						<div class="elementor-element elementor-element-ef8d2e1 e-flex e-con-boxed e-con e-child"
+							data-id="ef8d2e1" data-element_type="container"
+							data-settings="{&quot;background_background&quot;:&quot;gradient&quot;}">
+							<div class="e-con-inner">
+								<div class="elementor-element elementor-element-676ff7a e-con-full e-flex e-con e-child"
+									data-id="676ff7a" data-element_type="container">
+									<div class="elementor-element elementor-element-9192d9e elementor-widget__width-initial elementor-widget elementor-widget-heading"
+										data-id="9192d9e" data-element_type="widget" data-widget_type="heading.default">
+										<div class="elementor-widget-container">
+											<h1 class="elementor-heading-title elementor-size-default">Educate Blog</h1>
+										</div>
+									</div>
+								</div>
+								<div class="elementor-element elementor-element-6f6467a e-con-full e-flex e-con e-child"
+									data-id="6f6467a" data-element_type="container">
+									<div class="elementor-element elementor-element-8e22c05 elementor-widget__width-initial elementor-absolute e-transform elementor-widget elementor-widget-image"
+										data-id="8e22c05" data-element_type="widget" id="hero-icon"
+										data-settings="{&quot;_position&quot;:&quot;absolute&quot;,&quot;_transform_rotateZ_effect&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:26,&quot;sizes&quot;:[]},&quot;_transform_rotateZ_effect_tablet&quot;:{&quot;unit&quot;:&quot;deg&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;_transform_rotateZ_effect_mobile&quot;:{&quot;unit&quot;:&quot;deg&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]}}"
+										data-widget_type="image.default">
+										<div class="elementor-widget-container">
+											<img decoding="async" width="626" height="626"
+												src="/wp-content/uploads/2025/03/idea-icon-poster-1.webp"
+												class="attachment-large size-large wp-image-54681" alt=""
+												srcset="/wp-content/uploads/2025/03/idea-icon-poster-1.webp 626w, /wp-content/uploads/2025/03/idea-icon-poster-1.webp 300w, /wp-content/uploads/2025/03/idea-icon-poster-1.webp 150w"
+												sizes="(max-width: 626px) 100vw, 626px" />
+										</div>
+									</div>
+									<div class="elementor-element elementor-element-dc8a1b2 elementor-widget__width-initial elementor-absolute e-transform elementor-widget elementor-widget-image"
+										data-id="dc8a1b2" data-element_type="widget" id="hero-icon"
+										data-settings="{&quot;_position&quot;:&quot;absolute&quot;,&quot;_transform_flipX_effect&quot;:&quot;transform&quot;}"
+										data-widget_type="image.default">
+										<div class="elementor-widget-container">
+											<img decoding="async" width="626" height="626"
+												src="/wp-content/uploads/2025/03/globe-icon-poster-1.webp"
+												class="attachment-large size-large wp-image-54680" alt=""
+												srcset="/wp-content/uploads/2025/03/globe-icon-poster-1.webp 626w, /wp-content/uploads/2025/03/globe-icon-poster-1.webp 300w, /wp-content/uploads/2025/03/globe-icon-poster-1.webp 150w"
+												sizes="(max-width: 626px) 100vw, 626px" />
+										</div>
+									</div>
+									<div class="elementor-element elementor-element-067f433 elementor-widget__width-initial elementor-absolute e-transform elementor-widget elementor-widget-image"
+										data-id="067f433" data-element_type="widget" id="hero-icon"
+										data-settings="{&quot;_position&quot;:&quot;absolute&quot;,&quot;_transform_flipX_effect&quot;:&quot;transform&quot;}"
+										data-widget_type="image.default">
+										<div class="elementor-widget-container">
+											<img decoding="async" width="1000" height="1000"
+												src="https://educate.co.id/wp-content/uploads/2025/02/7911246-67b2e4a7d46c5.webp"
+												class="attachment-large size-large wp-image-52642" alt=""
+												srcset="https://educate.co.id/wp-content/uploads/2025/02/7911246-67b2e4a7d46c5.webp 1000w, https://educate.co.id/wp-content/uploads/2025/02/7911246-67b2e4a7d46c5-300x300.webp 300w, https://educate.co.id/wp-content/uploads/2025/02/7911246-67b2e4a7d46c5-150x150.webp 150w, https://educate.co.id/wp-content/uploads/2025/02/7911246-67b2e4a7d46c5-768x768.webp 768w"
+												sizes="(max-width: 1000px) 100vw, 1000px" />
+										</div>
+									</div>
+									<div class="elementor-element elementor-element-83bf79c elementor-widget__width-initial elementor-absolute elementor-widget elementor-widget-image"
+										data-id="83bf79c" data-element_type="widget" id="hero-icon"
+										data-settings="{&quot;_position&quot;:&quot;absolute&quot;}"
+										data-widget_type="image.default">
+										<div class="elementor-widget-container">
+											<img decoding="async" width="626" height="626"
+												src="https://educate.co.id/wp-content/uploads/2025/03/camera-icon-poster-1.webp"
+												class="attachment-large size-large wp-image-54678" alt=""
+												srcset="https://educate.co.id/wp-content/uploads/2025/03/camera-icon-poster-1.webp 626w, https://educate.co.id/wp-content/uploads/2025/03/camera-icon-poster-1-300x300.webp 300w, https://educate.co.id/wp-content/uploads/2025/03/camera-icon-poster-1-150x150.webp 150w"
+												sizes="(max-width: 626px) 100vw, 626px" />
+										</div>
+									</div>
+									<div class="elementor-element elementor-element-93cf2bb elementor-widget__width-initial elementor-absolute elementor-widget elementor-widget-image"
+										data-id="93cf2bb" data-element_type="widget" id="hero-icon"
+										data-settings="{&quot;_position&quot;:&quot;absolute&quot;}"
+										data-widget_type="image.default">
+										<div class="elementor-widget-container">
+											<img decoding="async" width="626" height="626"
+												src="https://educate.co.id/wp-content/uploads/2025/03/newspaper-icon-poster-1.webp"
+												class="attachment-large size-large wp-image-54679" alt=""
+												srcset="https://educate.co.id/wp-content/uploads/2025/03/newspaper-icon-poster-1.webp 626w, https://educate.co.id/wp-content/uploads/2025/03/newspaper-icon-poster-1-300x300.webp 300w, https://educate.co.id/wp-content/uploads/2025/03/newspaper-icon-poster-1-150x150.webp 150w"
+												sizes="(max-width: 626px) 100vw, 626px" />
+										</div>
+									</div>
+									<div class="elementor-element elementor-element-de7f7f1 elementor-widget elementor-widget-image"
+										data-id="de7f7f1" data-element_type="widget" data-widget_type="image.default">
+										<div class="elementor-widget-container">
+											<img decoding="async" width="683" height="1024"
+												src="wp-content/uploads/2025/03/DSC09215-1-1024x1536.webp"
+												class="attachment-large size-large wp-image-54677" alt=""
+												srcset="wp-content/uploads/2025/03/DSC09215-1-1024x1536.webp 683w, wp-content/uploads/2025/03/DSC09215-1-1024x1536.webp 200w, wp-content/uploads/2025/03/DSC09215-1-1024x1536.webp 768w, wp-content/uploads/2025/03/DSC09215-1-1024x1536.webp 1024w, wp-content/uploads/2025/03/DSC09215-1-1024x1536.webp 1365w, wp-content/uploads/2025/03/DSC09215-1-1024x1536.webp 1707w"
+												sizes="(max-width: 683px) 100vw, 683px" />
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="elementor-element elementor-element-b28b50f elementor-hidden-desktop elementor-hidden-tablet elementor-hidden-mobile e-flex e-con-boxed e-con e-parent"
+					data-id="b28b50f" data-element_type="container">
+					<div class="e-con-inner">
+						<div class="elementor-element elementor-element-4902c37 elementor-posts--align-left elementor-grid-3 elementor-grid-tablet-2 elementor-grid-mobile-1 elementor-posts--thumbnail-top elementor-card-shadow-yes elementor-posts__hover-gradient elementor-widget elementor-widget-posts"
+							data-id="4902c37" data-element_type="widget"
+							data-settings="{&quot;pagination_type&quot;:&quot;numbers_and_prev_next&quot;,&quot;cards_columns&quot;:&quot;3&quot;,&quot;cards_columns_tablet&quot;:&quot;2&quot;,&quot;cards_columns_mobile&quot;:&quot;1&quot;,&quot;cards_row_gap&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:35,&quot;sizes&quot;:[]},&quot;cards_row_gap_tablet&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;cards_row_gap_mobile&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]}}"
+							data-widget_type="posts.cards">
+							<div class="elementor-widget-container">
+								<div class="elementor-posts-container elementor-posts elementor-posts--skin-cards elementor-grid"
+									role="list">
+									<article
+										class="elementor-post elementor-grid-item post-57452 post type-post status-publish format-standard has-post-thumbnail hentry category-uncategorized"
+										role="listitem">
+										<div class="elementor-post__card">
+											<a class="elementor-post__thumbnail__link"
+												href="https://educate.co.id/nilai-minimal-masuk-itb/" tabindex="-1">
+												<div class="elementor-post__thumbnail"><img decoding="async" width="850"
+														height="567"
+														src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20850%20567'%3E%3C/svg%3E"
+														class="attachment-full size-full wp-image-57453"
+														alt="Nilai Minimal Masuk ITB"
+														data-lazy-srcset="https://educate.co.id/wp-content/uploads/2025/10/Nilai-Minimal-Masuk-ITB.webp 850w, https://educate.co.id/wp-content/uploads/2025/10/Nilai-Minimal-Masuk-ITB-300x200.webp 300w, https://educate.co.id/wp-content/uploads/2025/10/Nilai-Minimal-Masuk-ITB-768x512.webp 768w"
+														data-lazy-sizes="(max-width: 850px) 100vw, 850px"
+														data-lazy-src="https://educate.co.id/wp-content/uploads/2025/10/Nilai-Minimal-Masuk-ITB.webp" /><noscript><img
+															loading="lazy" decoding="async" width="850" height="567"
+															src="https://educate.co.id/wp-content/uploads/2025/10/Nilai-Minimal-Masuk-ITB.webp"
+															class="attachment-full size-full wp-image-57453"
+															alt="Nilai Minimal Masuk ITB"
+															srcset="https://educate.co.id/wp-content/uploads/2025/10/Nilai-Minimal-Masuk-ITB.webp 850w, https://educate.co.id/wp-content/uploads/2025/10/Nilai-Minimal-Masuk-ITB-300x200.webp 300w, https://educate.co.id/wp-content/uploads/2025/10/Nilai-Minimal-Masuk-ITB-768x512.webp 768w"
+															sizes="(max-width: 850px) 100vw, 850px" /></noscript></div>
+											</a>
+											<div class="elementor-post__badge">Uncategorized</div>
+											<div class="elementor-post__text">
+												<h3 class="elementor-post__title">
+													<a href="https://educate.co.id/nilai-minimal-masuk-itb/">
+														Nilai Rata-Rata Masuk Institut Teknologi Bandung (ITB) di SNBP
+														Tahun 2025 </a>
+												</h3>
+											</div>
+											<div class="elementor-post__meta-data">
+												<span class="elementor-post-date">
+													October 23, 2025 </span>
+												<span class="elementor-post-avatar">
+													No Comments </span>
+											</div>
+										</div>
+									</article>
+									<article
+										class="elementor-post elementor-grid-item post-57446 post type-post status-publish format-standard has-post-thumbnail hentry category-uncategorized"
+										role="listitem">
+										<div class="elementor-post__card">
+											<a class="elementor-post__thumbnail__link"
+												href="https://educate.co.id/nilai-minimal-masuk-ugm/" tabindex="-1">
+												<div class="elementor-post__thumbnail"><img decoding="async" width="850"
+														height="567"
+														src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20850%20567'%3E%3C/svg%3E"
+														class="attachment-full size-full wp-image-57447"
+														alt="Nilai Minimal Masuk UGM"
+														data-lazy-srcset="https://educate.co.id/wp-content/uploads/2025/10/Nilai-Minimal-Masuk-UGM.webp 850w, https://educate.co.id/wp-content/uploads/2025/10/Nilai-Minimal-Masuk-UGM-300x200.webp 300w, https://educate.co.id/wp-content/uploads/2025/10/Nilai-Minimal-Masuk-UGM-768x512.webp 768w"
+														data-lazy-sizes="(max-width: 850px) 100vw, 850px"
+														data-lazy-src="https://educate.co.id/wp-content/uploads/2025/10/Nilai-Minimal-Masuk-UGM.webp" /><noscript><img
+															loading="lazy" decoding="async" width="850" height="567"
+															src="https://educate.co.id/wp-content/uploads/2025/10/Nilai-Minimal-Masuk-UGM.webp"
+															class="attachment-full size-full wp-image-57447"
+															alt="Nilai Minimal Masuk UGM"
+															srcset="https://educate.co.id/wp-content/uploads/2025/10/Nilai-Minimal-Masuk-UGM.webp 850w, https://educate.co.id/wp-content/uploads/2025/10/Nilai-Minimal-Masuk-UGM-300x200.webp 300w, https://educate.co.id/wp-content/uploads/2025/10/Nilai-Minimal-Masuk-UGM-768x512.webp 768w"
+															sizes="(max-width: 850px) 100vw, 850px" /></noscript></div>
+											</a>
+											<div class="elementor-post__badge">Uncategorized</div>
+											<div class="elementor-post__text">
+												<h3 class="elementor-post__title">
+													<a href="https://educate.co.id/nilai-minimal-masuk-ugm/">
+														Segini Nilai Rata-Rata Masuk Universitas Gadjah Mada (UGM) di
+														SNBP Tahun 2025 </a>
+												</h3>
+											</div>
+											<div class="elementor-post__meta-data">
+												<span class="elementor-post-date">
+													October 22, 2025 </span>
+												<span class="elementor-post-avatar">
+													No Comments </span>
+											</div>
+										</div>
+									</article>
+									<article
+										class="elementor-post elementor-grid-item post-57442 post type-post status-publish format-standard has-post-thumbnail hentry category-uncategorized"
+										role="listitem">
+										<div class="elementor-post__card">
+											<a class="elementor-post__thumbnail__link"
+												href="https://educate.co.id/nilai-minimal-masuk-ui/" tabindex="-1">
+												<div class="elementor-post__thumbnail"><img decoding="async" width="850"
+														height="567"
+														src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20850%20567'%3E%3C/svg%3E"
+														class="attachment-full size-full wp-image-57443"
+														alt="Nilai Minimal Masuk UI"
+														data-lazy-srcset="https://educate.co.id/wp-content/uploads/2025/10/Nilai-Minimal-Masuk-UI.webp 850w, https://educate.co.id/wp-content/uploads/2025/10/Nilai-Minimal-Masuk-UI-300x200.webp 300w, https://educate.co.id/wp-content/uploads/2025/10/Nilai-Minimal-Masuk-UI-768x512.webp 768w"
+														data-lazy-sizes="(max-width: 850px) 100vw, 850px"
+														data-lazy-src="https://educate.co.id/wp-content/uploads/2025/10/Nilai-Minimal-Masuk-UI.webp" /><noscript><img
+															loading="lazy" decoding="async" width="850" height="567"
+															src="https://educate.co.id/wp-content/uploads/2025/10/Nilai-Minimal-Masuk-UI.webp"
+															class="attachment-full size-full wp-image-57443"
+															alt="Nilai Minimal Masuk UI"
+															srcset="https://educate.co.id/wp-content/uploads/2025/10/Nilai-Minimal-Masuk-UI.webp 850w, https://educate.co.id/wp-content/uploads/2025/10/Nilai-Minimal-Masuk-UI-300x200.webp 300w, https://educate.co.id/wp-content/uploads/2025/10/Nilai-Minimal-Masuk-UI-768x512.webp 768w"
+															sizes="(max-width: 850px) 100vw, 850px" /></noscript></div>
+											</a>
+											<div class="elementor-post__badge">Uncategorized</div>
+											<div class="elementor-post__text">
+												<h3 class="elementor-post__title">
+													<a href="https://educate.co.id/nilai-minimal-masuk-ui/">
+														Segini Nilai Rata-Rata Masuk Universitas Indonesia di SNBP Tahun
+														2025 </a>
+												</h3>
+											</div>
+											<div class="elementor-post__meta-data">
+												<span class="elementor-post-date">
+													October 18, 2025 </span>
+												<span class="elementor-post-avatar">
+													No Comments </span>
+											</div>
+										</div>
+									</article>
+									<article
+										class="elementor-post elementor-grid-item post-57438 post type-post status-publish format-standard has-post-thumbnail hentry category-informasi"
+										role="listitem">
+										<div class="elementor-post__card">
+											<a class="elementor-post__thumbnail__link"
+												href="https://educate.co.id/keketatan-prodi-unair-3/" tabindex="-1">
+												<div class="elementor-post__thumbnail"><img decoding="async" width="850"
+														height="567"
+														src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20850%20567'%3E%3C/svg%3E"
+														class="attachment-full size-full wp-image-57439"
+														alt="Keketatan Prodi Unair"
+														data-lazy-srcset="https://educate.co.id/wp-content/uploads/2025/10/Keketatan-Prodi-Unair-2.webp 850w, https://educate.co.id/wp-content/uploads/2025/10/Keketatan-Prodi-Unair-2-300x200.webp 300w, https://educate.co.id/wp-content/uploads/2025/10/Keketatan-Prodi-Unair-2-768x512.webp 768w"
+														data-lazy-sizes="(max-width: 850px) 100vw, 850px"
+														data-lazy-src="https://educate.co.id/wp-content/uploads/2025/10/Keketatan-Prodi-Unair-2.webp" /><noscript><img
+															loading="lazy" decoding="async" width="850" height="567"
+															src="https://educate.co.id/wp-content/uploads/2025/10/Keketatan-Prodi-Unair-2.webp"
+															class="attachment-full size-full wp-image-57439"
+															alt="Keketatan Prodi Unair"
+															srcset="https://educate.co.id/wp-content/uploads/2025/10/Keketatan-Prodi-Unair-2.webp 850w, https://educate.co.id/wp-content/uploads/2025/10/Keketatan-Prodi-Unair-2-300x200.webp 300w, https://educate.co.id/wp-content/uploads/2025/10/Keketatan-Prodi-Unair-2-768x512.webp 768w"
+															sizes="(max-width: 850px) 100vw, 850px" /></noscript></div>
+											</a>
+											<div class="elementor-post__badge">Informasi</div>
+											<div class="elementor-post__text">
+												<h3 class="elementor-post__title">
+													<a href="https://educate.co.id/keketatan-prodi-unair-3/">
+														Gagal SNBP dan SNBT? Baca Peluang Kelolosan di UNAIR Lewat Jalur
+														Mandiri  </a>
+												</h3>
+											</div>
+											<div class="elementor-post__meta-data">
+												<span class="elementor-post-date">
+													October 17, 2025 </span>
+												<span class="elementor-post-avatar">
+													No Comments </span>
+											</div>
+										</div>
+									</article>
+									<article
+										class="elementor-post elementor-grid-item post-57435 post type-post status-publish format-standard has-post-thumbnail hentry category-informasi"
+										role="listitem">
+										<div class="elementor-post__card">
+											<a class="elementor-post__thumbnail__link"
+												href="https://educate.co.id/keketatan-prodi-unair-2/" tabindex="-1">
+												<div class="elementor-post__thumbnail"><img decoding="async" width="850"
+														height="567"
+														src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20850%20567'%3E%3C/svg%3E"
+														class="attachment-full size-full wp-image-57436"
+														alt="Keketatan Prodi Unair"
+														data-lazy-srcset="https://educate.co.id/wp-content/uploads/2025/10/Keketatan-Prodi-Unair-1.webp 850w, https://educate.co.id/wp-content/uploads/2025/10/Keketatan-Prodi-Unair-1-300x200.webp 300w, https://educate.co.id/wp-content/uploads/2025/10/Keketatan-Prodi-Unair-1-768x512.webp 768w"
+														data-lazy-sizes="(max-width: 850px) 100vw, 850px"
+														data-lazy-src="https://educate.co.id/wp-content/uploads/2025/10/Keketatan-Prodi-Unair-1.webp" /><noscript><img
+															loading="lazy" decoding="async" width="850" height="567"
+															src="https://educate.co.id/wp-content/uploads/2025/10/Keketatan-Prodi-Unair-1.webp"
+															class="attachment-full size-full wp-image-57436"
+															alt="Keketatan Prodi Unair"
+															srcset="https://educate.co.id/wp-content/uploads/2025/10/Keketatan-Prodi-Unair-1.webp 850w, https://educate.co.id/wp-content/uploads/2025/10/Keketatan-Prodi-Unair-1-300x200.webp 300w, https://educate.co.id/wp-content/uploads/2025/10/Keketatan-Prodi-Unair-1-768x512.webp 768w"
+															sizes="(max-width: 850px) 100vw, 850px" /></noscript></div>
+											</a>
+											<div class="elementor-post__badge">Informasi</div>
+											<div class="elementor-post__text">
+												<h3 class="elementor-post__title">
+													<a href="https://educate.co.id/keketatan-prodi-unair-2/">
+														Cek Peluang SNBT UNAIR! Segini Persentase Keketatan di Tiap
+														Prodi </a>
+												</h3>
+											</div>
+											<div class="elementor-post__meta-data">
+												<span class="elementor-post-date">
+													October 16, 2025 </span>
+												<span class="elementor-post-avatar">
+													No Comments </span>
+											</div>
+										</div>
+									</article>
+									<article
+										class="elementor-post elementor-grid-item post-57432 post type-post status-publish format-standard has-post-thumbnail hentry category-uncategorized"
+										role="listitem">
+										<div class="elementor-post__card">
+											<a class="elementor-post__thumbnail__link"
+												href="https://educate.co.id/keketatan-prodi-unair/" tabindex="-1">
+												<div class="elementor-post__thumbnail"><img decoding="async" width="850"
+														height="567"
+														src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20850%20567'%3E%3C/svg%3E"
+														class="attachment-full size-full wp-image-57433"
+														alt="Keketatan Prodi Unair"
+														data-lazy-srcset="https://educate.co.id/wp-content/uploads/2025/10/Keketatan-Prodi-Unair.webp 850w, https://educate.co.id/wp-content/uploads/2025/10/Keketatan-Prodi-Unair-300x200.webp 300w, https://educate.co.id/wp-content/uploads/2025/10/Keketatan-Prodi-Unair-768x512.webp 768w"
+														data-lazy-sizes="(max-width: 850px) 100vw, 850px"
+														data-lazy-src="https://educate.co.id/wp-content/uploads/2025/10/Keketatan-Prodi-Unair.webp" /><noscript><img
+															loading="lazy" decoding="async" width="850" height="567"
+															src="https://educate.co.id/wp-content/uploads/2025/10/Keketatan-Prodi-Unair.webp"
+															class="attachment-full size-full wp-image-57433"
+															alt="Keketatan Prodi Unair"
+															srcset="https://educate.co.id/wp-content/uploads/2025/10/Keketatan-Prodi-Unair.webp 850w, https://educate.co.id/wp-content/uploads/2025/10/Keketatan-Prodi-Unair-300x200.webp 300w, https://educate.co.id/wp-content/uploads/2025/10/Keketatan-Prodi-Unair-768x512.webp 768w"
+															sizes="(max-width: 850px) 100vw, 850px" /></noscript></div>
+											</a>
+											<div class="elementor-post__badge">Uncategorized</div>
+											<div class="elementor-post__text">
+												<h3 class="elementor-post__title">
+													<a href="https://educate.co.id/keketatan-prodi-unair/">
+														Cek Peluang Kelolosan! Segini Persentase Keketatan Prodi UNAIR
+														di Jalur SNBP 2025 </a>
+												</h3>
+											</div>
+											<div class="elementor-post__meta-data">
+												<span class="elementor-post-date">
+													October 15, 2025 </span>
+												<span class="elementor-post-avatar">
+													No Comments </span>
+											</div>
+										</div>
+									</article>
+									<article
+										class="elementor-post elementor-grid-item post-57429 post type-post status-publish format-standard has-post-thumbnail hentry category-informasi"
+										role="listitem">
+										<div class="elementor-post__card">
+											<a class="elementor-post__thumbnail__link"
+												href="https://educate.co.id/jalur-prestasi-um-2/" tabindex="-1">
+												<div class="elementor-post__thumbnail"><img decoding="async" width="850"
+														height="567"
+														src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20850%20567'%3E%3C/svg%3E"
+														class="attachment-full size-full wp-image-57430"
+														alt="Jalur Prestasi UM"
+														data-lazy-srcset="https://educate.co.id/wp-content/uploads/2025/10/Jalur-Prestasi-UM-1.webp 850w, https://educate.co.id/wp-content/uploads/2025/10/Jalur-Prestasi-UM-1-300x200.webp 300w, https://educate.co.id/wp-content/uploads/2025/10/Jalur-Prestasi-UM-1-768x512.webp 768w"
+														data-lazy-sizes="(max-width: 850px) 100vw, 850px"
+														data-lazy-src="https://educate.co.id/wp-content/uploads/2025/10/Jalur-Prestasi-UM-1.webp" /><noscript><img
+															loading="lazy" decoding="async" width="850" height="567"
+															src="https://educate.co.id/wp-content/uploads/2025/10/Jalur-Prestasi-UM-1.webp"
+															class="attachment-full size-full wp-image-57430"
+															alt="Jalur Prestasi UM"
+															srcset="https://educate.co.id/wp-content/uploads/2025/10/Jalur-Prestasi-UM-1.webp 850w, https://educate.co.id/wp-content/uploads/2025/10/Jalur-Prestasi-UM-1-300x200.webp 300w, https://educate.co.id/wp-content/uploads/2025/10/Jalur-Prestasi-UM-1-768x512.webp 768w"
+															sizes="(max-width: 850px) 100vw, 850px" /></noscript></div>
+											</a>
+											<div class="elementor-post__badge">Informasi</div>
+											<div class="elementor-post__text">
+												<h3 class="elementor-post__title">
+													<a href="https://educate.co.id/jalur-prestasi-um-2/">
+														Kuasai Bahasa Inggris? Kamu Punya Peluang Besar di Jalur
+														Prestasi Universitas Negeri Malang (UM) </a>
+												</h3>
+											</div>
+											<div class="elementor-post__meta-data">
+												<span class="elementor-post-date">
+													October 14, 2025 </span>
+												<span class="elementor-post-avatar">
+													No Comments </span>
+											</div>
+										</div>
+									</article>
+									<article
+										class="elementor-post elementor-grid-item post-57421 post type-post status-publish format-standard has-post-thumbnail hentry category-informasi"
+										role="listitem">
+										<div class="elementor-post__card">
+											<a class="elementor-post__thumbnail__link"
+												href="https://educate.co.id/jalur-prestasi-um/" tabindex="-1">
+												<div class="elementor-post__thumbnail"><img decoding="async" width="850"
+														height="567"
+														src="https://educate.co.id/wp-content/uploads/2025/10/Jalur-Prestasi-UM.webp"
+														class="attachment-full size-full wp-image-57422"
+														alt="Jalur Prestasi UM"
+														srcset="https://educate.co.id/wp-content/uploads/2025/10/Jalur-Prestasi-UM.webp 850w, https://educate.co.id/wp-content/uploads/2025/10/Jalur-Prestasi-UM-300x200.webp 300w, https://educate.co.id/wp-content/uploads/2025/10/Jalur-Prestasi-UM-768x512.webp 768w"
+														sizes="(max-width: 850px) 100vw, 850px" /></div>
+											</a>
+											<div class="elementor-post__badge">Informasi</div>
+											<div class="elementor-post__text">
+												<h3 class="elementor-post__title">
+													<a href="https://educate.co.id/jalur-prestasi-um/">
+														Bidang Kejuaraan yang Bisa Mendaftar di Jalur Prestasi
+														Universitas Negeri Malang (UM) </a>
+												</h3>
+											</div>
+											<div class="elementor-post__meta-data">
+												<span class="elementor-post-date">
+													October 9, 2025 </span>
+												<span class="elementor-post-avatar">
+													No Comments </span>
+											</div>
+										</div>
+									</article>
+									<article
+										class="elementor-post elementor-grid-item post-57418 post type-post status-publish format-standard has-post-thumbnail hentry category-informasi"
+										role="listitem">
+										<div class="elementor-post__card">
+											<a class="elementor-post__thumbnail__link"
+												href="/daftar-pusat-utbk" tabindex="-1">
+												<div class="elementor-post__thumbnail"><img decoding="async" width="850"
+														height="567"
+														src="/wp-content/uploads/2025/10/Daftar-Pusat-UTBK.webp"
+														class="attachment-full size-full wp-image-57419"
+														alt="Daftar Pusat UTBK"
+														srcset="/wp-content/uploads/2025/10/Daftar-Pusat-UTBK.webp 850w, /wp-content/uploads/2025/10/Daftar-Pusat-UTBK.webp 300w, /wp-content/uploads/2025/10/Daftar-Pusat-UTBK.webp 768w"
+														sizes="(max-width: 850px) 100vw, 850px" /></div>
+											</a>
+											<div class="elementor-post__badge">Informasi</div>
+											<div class="elementor-post__text">
+												<h3 class="elementor-post__title">
+													<a href="/daftar-pusat-utbk">
+														Daftar 74 Perguruan Tinggi yang Jadi Pusat Pelaksanaan UTBK SNBT
+													</a>
+												</h3>
+											</div>
+											<div class="elementor-post__meta-data">
+												<span class="elementor-post-date">
+													October 6, 2025 </span>
+												<span class="elementor-post-avatar">
+													No Comments </span>
+											</div>
+										</div>
+									</article>
+								</div>
+
+								<div class="e-load-more-anchor" data-page="1" data-max-page="65"
+									data-next-page="/blogs2/"></div>
+								<nav class="elementor-pagination" aria-label="Pagination">
+									<span class="page-numbers prev">&laquo; Previous</span>
+									<span aria-current="page" class="page-numbers current"><span
+											class="elementor-screen-only">Page</span>1</span>
+									<a class="page-numbers" href="/blogs2/"><span
+											class="elementor-screen-only">Page</span>2</a>
+									<a class="page-numbers" href="/blogs3/"><span
+											class="elementor-screen-only">Page</span>3</a>
+									<span class="page-numbers dots">&hellip;</span>
+									<a class="page-numbers" href="/blogs65/"><span
+											class="elementor-screen-only">Page</span>65</a>
+									<a class="page-numbers next" href="/blogs2/">Next &raquo;</a>
+								</nav>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="elementor-element elementor-element-1b53203 e-flex e-con-boxed e-con e-parent"
+					data-id="1b53203" data-element_type="container">
+					<div class="e-con-inner">
+						<div class="elementor-element elementor-element-3606111 elementor-posts--align-left elementor-grid-3 elementor-grid-tablet-2 elementor-grid-mobile-1 elementor-posts--thumbnail-top elementor-card-shadow-yes elementor-posts__hover-gradient elementor-widget elementor-widget-posts"
+							data-id="3606111" data-element_type="widget"
+							data-settings="{&quot;pagination_type&quot;:&quot;numbers_and_prev_next&quot;,&quot;cards_columns&quot;:&quot;3&quot;,&quot;cards_columns_tablet&quot;:&quot;2&quot;,&quot;cards_columns_mobile&quot;:&quot;1&quot;,&quot;cards_row_gap&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:35,&quot;sizes&quot;:[]},&quot;cards_row_gap_tablet&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;cards_row_gap_mobile&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]}}"
+							data-widget_type="posts.cards">
+							<div class="elementor-widget-container">
+								<div class="elementor-posts-container elementor-posts elementor-posts--skin-cards elementor-grid"
+									role="list">
+									<article
+										class="elementor-post elementor-grid-item post-57452 post type-post status-publish format-standard has-post-thumbnail hentry category-uncategorized"
+										role="listitem">
+										<div class="elementor-post__card">
+											<a class="elementor-post__thumbnail__link"
+												href="https://educate.co.id/nilai-minimal-masuk-itb/" tabindex="-1">
+												<div class="elementor-post__thumbnail"><img decoding="async" width="850"
+														height="567"
+														src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20850%20567'%3E%3C/svg%3E"
+														class="attachment-full size-full wp-image-57453"
+														alt="Nilai Minimal Masuk ITB"
+														data-lazy-srcset="https://educate.co.id/wp-content/uploads/2025/10/Nilai-Minimal-Masuk-ITB.webp 850w, https://educate.co.id/wp-content/uploads/2025/10/Nilai-Minimal-Masuk-ITB-300x200.webp 300w, https://educate.co.id/wp-content/uploads/2025/10/Nilai-Minimal-Masuk-ITB-768x512.webp 768w"
+														data-lazy-sizes="(max-width: 850px) 100vw, 850px"
+														data-lazy-src="https://educate.co.id/wp-content/uploads/2025/10/Nilai-Minimal-Masuk-ITB.webp" /><noscript><img
+															loading="lazy" decoding="async" width="850" height="567"
+															src="https://educate.co.id/wp-content/uploads/2025/10/Nilai-Minimal-Masuk-ITB.webp"
+															class="attachment-full size-full wp-image-57453"
+															alt="Nilai Minimal Masuk ITB"
+															srcset="https://educate.co.id/wp-content/uploads/2025/10/Nilai-Minimal-Masuk-ITB.webp 850w, https://educate.co.id/wp-content/uploads/2025/10/Nilai-Minimal-Masuk-ITB-300x200.webp 300w, https://educate.co.id/wp-content/uploads/2025/10/Nilai-Minimal-Masuk-ITB-768x512.webp 768w"
+															sizes="(max-width: 850px) 100vw, 850px" /></noscript></div>
+											</a>
+											<div class="elementor-post__badge">Uncategorized</div>
+											<div class="elementor-post__text">
+												<h3 class="elementor-post__title">
+													<a href="https://educate.co.id/nilai-minimal-masuk-itb/">
+														Nilai Rata-Rata Masuk Institut Teknologi Bandung (ITB) di SNBP
+														Tahun 2025 </a>
+												</h3>
+											</div>
+											<div class="elementor-post__meta-data">
+												<span class="elementor-post-date">
+													October 23, 2025 </span>
+												<span class="elementor-post-avatar">
+													No Comments </span>
+											</div>
+										</div>
+									</article>
+									<article
+										class="elementor-post elementor-grid-item post-57446 post type-post status-publish format-standard has-post-thumbnail hentry category-uncategorized"
+										role="listitem">
+										<div class="elementor-post__card">
+											<a class="elementor-post__thumbnail__link"
+												href="https://educate.co.id/nilai-minimal-masuk-ugm/" tabindex="-1">
+												<div class="elementor-post__thumbnail"><img decoding="async" width="850"
+														height="567"
+														src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20850%20567'%3E%3C/svg%3E"
+														class="attachment-full size-full wp-image-57447"
+														alt="Nilai Minimal Masuk UGM"
+														data-lazy-srcset="https://educate.co.id/wp-content/uploads/2025/10/Nilai-Minimal-Masuk-UGM.webp 850w, https://educate.co.id/wp-content/uploads/2025/10/Nilai-Minimal-Masuk-UGM-300x200.webp 300w, https://educate.co.id/wp-content/uploads/2025/10/Nilai-Minimal-Masuk-UGM-768x512.webp 768w"
+														data-lazy-sizes="(max-width: 850px) 100vw, 850px"
+														data-lazy-src="https://educate.co.id/wp-content/uploads/2025/10/Nilai-Minimal-Masuk-UGM.webp" /><noscript><img
+															loading="lazy" decoding="async" width="850" height="567"
+															src="https://educate.co.id/wp-content/uploads/2025/10/Nilai-Minimal-Masuk-UGM.webp"
+															class="attachment-full size-full wp-image-57447"
+															alt="Nilai Minimal Masuk UGM"
+															srcset="https://educate.co.id/wp-content/uploads/2025/10/Nilai-Minimal-Masuk-UGM.webp 850w, https://educate.co.id/wp-content/uploads/2025/10/Nilai-Minimal-Masuk-UGM-300x200.webp 300w, https://educate.co.id/wp-content/uploads/2025/10/Nilai-Minimal-Masuk-UGM-768x512.webp 768w"
+															sizes="(max-width: 850px) 100vw, 850px" /></noscript></div>
+											</a>
+											<div class="elementor-post__badge">Uncategorized</div>
+											<div class="elementor-post__text">
+												<h3 class="elementor-post__title">
+													<a href="https://educate.co.id/nilai-minimal-masuk-ugm/">
+														Segini Nilai Rata-Rata Masuk Universitas Gadjah Mada (UGM) di
+														SNBP Tahun 2025 </a>
+												</h3>
+											</div>
+											<div class="elementor-post__meta-data">
+												<span class="elementor-post-date">
+													October 22, 2025 </span>
+												<span class="elementor-post-avatar">
+													No Comments </span>
+											</div>
+										</div>
+									</article>
+									<article
+										class="elementor-post elementor-grid-item post-57442 post type-post status-publish format-standard has-post-thumbnail hentry category-uncategorized"
+										role="listitem">
+										<div class="elementor-post__card">
+											<a class="elementor-post__thumbnail__link"
+												href="https://educate.co.id/nilai-minimal-masuk-ui/" tabindex="-1">
+												<div class="elementor-post__thumbnail"><img decoding="async" width="850"
+														height="567"
+														src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20850%20567'%3E%3C/svg%3E"
+														class="attachment-full size-full wp-image-57443"
+														alt="Nilai Minimal Masuk UI"
+														data-lazy-srcset="https://educate.co.id/wp-content/uploads/2025/10/Nilai-Minimal-Masuk-UI.webp 850w, https://educate.co.id/wp-content/uploads/2025/10/Nilai-Minimal-Masuk-UI-300x200.webp 300w, https://educate.co.id/wp-content/uploads/2025/10/Nilai-Minimal-Masuk-UI-768x512.webp 768w"
+														data-lazy-sizes="(max-width: 850px) 100vw, 850px"
+														data-lazy-src="https://educate.co.id/wp-content/uploads/2025/10/Nilai-Minimal-Masuk-UI.webp" /><noscript><img
+															loading="lazy" decoding="async" width="850" height="567"
+															src="https://educate.co.id/wp-content/uploads/2025/10/Nilai-Minimal-Masuk-UI.webp"
+															class="attachment-full size-full wp-image-57443"
+															alt="Nilai Minimal Masuk UI"
+															srcset="https://educate.co.id/wp-content/uploads/2025/10/Nilai-Minimal-Masuk-UI.webp 850w, https://educate.co.id/wp-content/uploads/2025/10/Nilai-Minimal-Masuk-UI-300x200.webp 300w, https://educate.co.id/wp-content/uploads/2025/10/Nilai-Minimal-Masuk-UI-768x512.webp 768w"
+															sizes="(max-width: 850px) 100vw, 850px" /></noscript></div>
+											</a>
+											<div class="elementor-post__badge">Uncategorized</div>
+											<div class="elementor-post__text">
+												<h3 class="elementor-post__title">
+													<a href="https://educate.co.id/nilai-minimal-masuk-ui/">
+														Segini Nilai Rata-Rata Masuk Universitas Indonesia di SNBP Tahun
+														2025 </a>
+												</h3>
+											</div>
+											<div class="elementor-post__meta-data">
+												<span class="elementor-post-date">
+													October 18, 2025 </span>
+												<span class="elementor-post-avatar">
+													No Comments </span>
+											</div>
+										</div>
+									</article>
+									<article
+										class="elementor-post elementor-grid-item post-57438 post type-post status-publish format-standard has-post-thumbnail hentry category-informasi"
+										role="listitem">
+										<div class="elementor-post__card">
+											<a class="elementor-post__thumbnail__link"
+												href="https://educate.co.id/keketatan-prodi-unair-3/" tabindex="-1">
+												<div class="elementor-post__thumbnail"><img decoding="async" width="850"
+														height="567"
+														src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20850%20567'%3E%3C/svg%3E"
+														class="attachment-full size-full wp-image-57439"
+														alt="Keketatan Prodi Unair"
+														data-lazy-srcset="https://educate.co.id/wp-content/uploads/2025/10/Keketatan-Prodi-Unair-2.webp 850w, https://educate.co.id/wp-content/uploads/2025/10/Keketatan-Prodi-Unair-2-300x200.webp 300w, https://educate.co.id/wp-content/uploads/2025/10/Keketatan-Prodi-Unair-2-768x512.webp 768w"
+														data-lazy-sizes="(max-width: 850px) 100vw, 850px"
+														data-lazy-src="https://educate.co.id/wp-content/uploads/2025/10/Keketatan-Prodi-Unair-2.webp" /><noscript><img
+															loading="lazy" decoding="async" width="850" height="567"
+															src="https://educate.co.id/wp-content/uploads/2025/10/Keketatan-Prodi-Unair-2.webp"
+															class="attachment-full size-full wp-image-57439"
+															alt="Keketatan Prodi Unair"
+															srcset="https://educate.co.id/wp-content/uploads/2025/10/Keketatan-Prodi-Unair-2.webp 850w, https://educate.co.id/wp-content/uploads/2025/10/Keketatan-Prodi-Unair-2-300x200.webp 300w, https://educate.co.id/wp-content/uploads/2025/10/Keketatan-Prodi-Unair-2-768x512.webp 768w"
+															sizes="(max-width: 850px) 100vw, 850px" /></noscript></div>
+											</a>
+											<div class="elementor-post__badge">Informasi</div>
+											<div class="elementor-post__text">
+												<h3 class="elementor-post__title">
+													<a href="https://educate.co.id/keketatan-prodi-unair-3/">
+														Gagal SNBP dan SNBT? Baca Peluang Kelolosan di UNAIR Lewat Jalur
+														Mandiri  </a>
+												</h3>
+											</div>
+											<div class="elementor-post__meta-data">
+												<span class="elementor-post-date">
+													October 17, 2025 </span>
+												<span class="elementor-post-avatar">
+													No Comments </span>
+											</div>
+										</div>
+									</article>
+									<article
+										class="elementor-post elementor-grid-item post-57435 post type-post status-publish format-standard has-post-thumbnail hentry category-informasi"
+										role="listitem">
+										<div class="elementor-post__card">
+											<a class="elementor-post__thumbnail__link"
+												href="https://educate.co.id/keketatan-prodi-unair-2/" tabindex="-1">
+												<div class="elementor-post__thumbnail"><img decoding="async" width="850"
+														height="567"
+														src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20850%20567'%3E%3C/svg%3E"
+														class="attachment-full size-full wp-image-57436"
+														alt="Keketatan Prodi Unair"
+														data-lazy-srcset="https://educate.co.id/wp-content/uploads/2025/10/Keketatan-Prodi-Unair-1.webp 850w, https://educate.co.id/wp-content/uploads/2025/10/Keketatan-Prodi-Unair-1-300x200.webp 300w, https://educate.co.id/wp-content/uploads/2025/10/Keketatan-Prodi-Unair-1-768x512.webp 768w"
+														data-lazy-sizes="(max-width: 850px) 100vw, 850px"
+														data-lazy-src="https://educate.co.id/wp-content/uploads/2025/10/Keketatan-Prodi-Unair-1.webp" /><noscript><img
+															loading="lazy" decoding="async" width="850" height="567"
+															src="https://educate.co.id/wp-content/uploads/2025/10/Keketatan-Prodi-Unair-1.webp"
+															class="attachment-full size-full wp-image-57436"
+															alt="Keketatan Prodi Unair"
+															srcset="https://educate.co.id/wp-content/uploads/2025/10/Keketatan-Prodi-Unair-1.webp 850w, https://educate.co.id/wp-content/uploads/2025/10/Keketatan-Prodi-Unair-1-300x200.webp 300w, https://educate.co.id/wp-content/uploads/2025/10/Keketatan-Prodi-Unair-1-768x512.webp 768w"
+															sizes="(max-width: 850px) 100vw, 850px" /></noscript></div>
+											</a>
+											<div class="elementor-post__badge">Informasi</div>
+											<div class="elementor-post__text">
+												<h3 class="elementor-post__title">
+													<a href="https://educate.co.id/keketatan-prodi-unair-2/">
+														Cek Peluang SNBT UNAIR! Segini Persentase Keketatan di Tiap
+														Prodi </a>
+												</h3>
+											</div>
+											<div class="elementor-post__meta-data">
+												<span class="elementor-post-date">
+													October 16, 2025 </span>
+												<span class="elementor-post-avatar">
+													No Comments </span>
+											</div>
+										</div>
+									</article>
+									<article
+										class="elementor-post elementor-grid-item post-57432 post type-post status-publish format-standard has-post-thumbnail hentry category-uncategorized"
+										role="listitem">
+										<div class="elementor-post__card">
+											<a class="elementor-post__thumbnail__link"
+												href="https://educate.co.id/keketatan-prodi-unair/" tabindex="-1">
+												<div class="elementor-post__thumbnail"><img decoding="async" width="850"
+														height="567"
+														src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20850%20567'%3E%3C/svg%3E"
+														class="attachment-full size-full wp-image-57433"
+														alt="Keketatan Prodi Unair"
+														data-lazy-srcset="https://educate.co.id/wp-content/uploads/2025/10/Keketatan-Prodi-Unair.webp 850w, https://educate.co.id/wp-content/uploads/2025/10/Keketatan-Prodi-Unair-300x200.webp 300w, https://educate.co.id/wp-content/uploads/2025/10/Keketatan-Prodi-Unair-768x512.webp 768w"
+														data-lazy-sizes="(max-width: 850px) 100vw, 850px"
+														data-lazy-src="https://educate.co.id/wp-content/uploads/2025/10/Keketatan-Prodi-Unair.webp" /><noscript><img
+															loading="lazy" decoding="async" width="850" height="567"
+															src="https://educate.co.id/wp-content/uploads/2025/10/Keketatan-Prodi-Unair.webp"
+															class="attachment-full size-full wp-image-57433"
+															alt="Keketatan Prodi Unair"
+															srcset="https://educate.co.id/wp-content/uploads/2025/10/Keketatan-Prodi-Unair.webp 850w, https://educate.co.id/wp-content/uploads/2025/10/Keketatan-Prodi-Unair-300x200.webp 300w, https://educate.co.id/wp-content/uploads/2025/10/Keketatan-Prodi-Unair-768x512.webp 768w"
+															sizes="(max-width: 850px) 100vw, 850px" /></noscript></div>
+											</a>
+											<div class="elementor-post__badge">Uncategorized</div>
+											<div class="elementor-post__text">
+												<h3 class="elementor-post__title">
+													<a href="https://educate.co.id/keketatan-prodi-unair/">
+														Cek Peluang Kelolosan! Segini Persentase Keketatan Prodi UNAIR
+														di Jalur SNBP 2025 </a>
+												</h3>
+											</div>
+											<div class="elementor-post__meta-data">
+												<span class="elementor-post-date">
+													October 15, 2025 </span>
+												<span class="elementor-post-avatar">
+													No Comments </span>
+											</div>
+										</div>
+									</article>
+									<article
+										class="elementor-post elementor-grid-item post-57429 post type-post status-publish format-standard has-post-thumbnail hentry category-informasi"
+										role="listitem">
+										<div class="elementor-post__card">
+											<a class="elementor-post__thumbnail__link"
+												href="https://educate.co.id/jalur-prestasi-um-2/" tabindex="-1">
+												<div class="elementor-post__thumbnail"><img decoding="async" width="850"
+														height="567"
+														src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20850%20567'%3E%3C/svg%3E"
+														class="attachment-full size-full wp-image-57430"
+														alt="Jalur Prestasi UM"
+														data-lazy-srcset="https://educate.co.id/wp-content/uploads/2025/10/Jalur-Prestasi-UM-1.webp 850w, https://educate.co.id/wp-content/uploads/2025/10/Jalur-Prestasi-UM-1-300x200.webp 300w, https://educate.co.id/wp-content/uploads/2025/10/Jalur-Prestasi-UM-1-768x512.webp 768w"
+														data-lazy-sizes="(max-width: 850px) 100vw, 850px"
+														data-lazy-src="https://educate.co.id/wp-content/uploads/2025/10/Jalur-Prestasi-UM-1.webp" /><noscript><img
+															loading="lazy" decoding="async" width="850" height="567"
+															src="https://educate.co.id/wp-content/uploads/2025/10/Jalur-Prestasi-UM-1.webp"
+															class="attachment-full size-full wp-image-57430"
+															alt="Jalur Prestasi UM"
+															srcset="https://educate.co.id/wp-content/uploads/2025/10/Jalur-Prestasi-UM-1.webp 850w, https://educate.co.id/wp-content/uploads/2025/10/Jalur-Prestasi-UM-1-300x200.webp 300w, https://educate.co.id/wp-content/uploads/2025/10/Jalur-Prestasi-UM-1-768x512.webp 768w"
+															sizes="(max-width: 850px) 100vw, 850px" /></noscript></div>
+											</a>
+											<div class="elementor-post__badge">Informasi</div>
+											<div class="elementor-post__text">
+												<h3 class="elementor-post__title">
+													<a href="https://educate.co.id/jalur-prestasi-um-2/">
+														Kuasai Bahasa Inggris? Kamu Punya Peluang Besar di Jalur
+														Prestasi Universitas Negeri Malang (UM) </a>
+												</h3>
+											</div>
+											<div class="elementor-post__meta-data">
+												<span class="elementor-post-date">
+													October 14, 2025 </span>
+												<span class="elementor-post-avatar">
+													No Comments </span>
+											</div>
+										</div>
+									</article>
+									<article
+										class="elementor-post elementor-grid-item post-57421 post type-post status-publish format-standard has-post-thumbnail hentry category-informasi"
+										role="listitem">
+										<div class="elementor-post__card">
+											<a class="elementor-post__thumbnail__link"
+												href="https://educate.co.id/jalur-prestasi-um/" tabindex="-1">
+												<div class="elementor-post__thumbnail"><img decoding="async" width="850"
+														height="567"
+														src="https://educate.co.id/wp-content/uploads/2025/10/Jalur-Prestasi-UM.webp"
+														class="attachment-full size-full wp-image-57422"
+														alt="Jalur Prestasi UM"
+														srcset="https://educate.co.id/wp-content/uploads/2025/10/Jalur-Prestasi-UM.webp 850w, https://educate.co.id/wp-content/uploads/2025/10/Jalur-Prestasi-UM-300x200.webp 300w, https://educate.co.id/wp-content/uploads/2025/10/Jalur-Prestasi-UM-768x512.webp 768w"
+														sizes="(max-width: 850px) 100vw, 850px" /></div>
+											</a>
+											<div class="elementor-post__badge">Informasi</div>
+											<div class="elementor-post__text">
+												<h3 class="elementor-post__title">
+													<a href="https://educate.co.id/jalur-prestasi-um/">
+														Bidang Kejuaraan yang Bisa Mendaftar di Jalur Prestasi
+														Universitas Negeri Malang (UM) </a>
+												</h3>
+											</div>
+											<div class="elementor-post__meta-data">
+												<span class="elementor-post-date">
+													October 9, 2025 </span>
+												<span class="elementor-post-avatar">
+													No Comments </span>
+											</div>
+										</div>
+									</article>
+									<article
+										class="elementor-post elementor-grid-item post-57418 post type-post status-publish format-standard has-post-thumbnail hentry category-informasi"
+										role="listitem">
+										<div class="elementor-post__card">
+											<a class="elementor-post__thumbnail__link"
+												href="/daftar-pusat-utbk" tabindex="-1">
+												<div class="elementor-post__thumbnail"><img decoding="async" width="850"
+														height="567"
+														src="https://educate.co.id/wp-content/uploads/2025/10/Daftar-Pusat-UTBK.webp"
+														class="attachment-full size-full wp-image-57419"
+														alt="Daftar Pusat UTBK"
+														srcset="https://educate.co.id/wp-content/uploads/2025/10/Daftar-Pusat-UTBK.webp 850w, /wp-content/uploads/2025/10/Daftar-Pusat-UTBK.webp 300w, /wp-content/uploads/2025/10/Daftar-Pusat-UTBK.webp 768w"
+														sizes="(max-width: 850px) 100vw, 850px" /></div>
+											</a>
+											<div class="elementor-post__badge">Informasi</div>
+											<div class="elementor-post__text">
+												<h3 class="elementor-post__title">
+													<a href="/daftar-pusat-utbk">
+														Daftar 74 Perguruan Tinggi yang Jadi Pusat Pelaksanaan UTBK SNBT
+													</a>
+												</h3>
+											</div>
+											<div class="elementor-post__meta-data">
+												<span class="elementor-post-date">
+													October 6, 2025 </span>
+												<span class="elementor-post-avatar">
+													No Comments </span>
+											</div>
+										</div>
+									</article>
+								</div>
+
+								<div class="e-load-more-anchor" data-page="1" data-max-page="65"
+									data-next-page="/blogs2/"></div>
+								<nav class="elementor-pagination" aria-label="Pagination">
+									<span class="page-numbers prev">&laquo; Previous</span>
+									<span aria-current="page" class="page-numbers current"><span
+											class="elementor-screen-only">Page</span>1</span>
+									<a class="page-numbers" href="/blogs2/"><span
+											class="elementor-screen-only">Page</span>2</a>
+									<a class="page-numbers" href="/blogs3/"><span
+											class="elementor-screen-only">Page</span>3</a>
+									<span class="page-numbers dots">&hellip;</span>
+									<a class="page-numbers" href="/blogs65/"><span
+											class="elementor-screen-only">Page</span>65</a>
+									<a class="page-numbers next" href="/blogs2/">Next &raquo;</a>
+								</nav>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</div>
+
+
+	<div class="site-footer">
+		<footer></footer>
+	</div>
+
+	<nav id="generate-slideout-menu" class="main-navigation slideout-navigation"
+		itemtype="https://schema.org/SiteNavigationElement" itemscope>
+		<div class="inside-navigation grid-container grid-parent">
+		</div><!-- .inside-navigation -->
+	</nav><!-- #site-navigation -->
+
+	<div class="slideout-overlay">
+		<button class="slideout-exit has-svg-icon">
+			<span class="gp-icon pro-close">
+				<svg viewBox="0 0 512 512" aria-hidden="true" role="img" version="1.1"
+					xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1em"
+					height="1em">
+					<path
+						d="M71.029 71.029c9.373-9.372 24.569-9.372 33.942 0L256 222.059l151.029-151.03c9.373-9.372 24.569-9.372 33.942 0 9.372 9.373 9.372 24.569 0 33.942L289.941 256l151.03 151.029c9.372 9.373 9.372 24.569 0 33.942-9.373 9.372-24.569 9.372-33.942 0L256 289.941l-151.029 151.03c-9.373 9.372-24.569 9.372-33.942 0-9.372-9.373-9.372-24.569 0-33.942L222.059 256 71.029 104.971c-9.372-9.373-9.372-24.569 0-33.942z" />
+				</svg>
+			</span> <span class="screen-reader-text">Close</span>
+		</button>
+	</div>
+	<script type="speculationrules">
+{"prefetch":[{"source":"document","where":{"and":[{"href_matches":"\/*"},{"not":{"href_matches":["\/wp-*.php","\/wp-admin\/*","\/wp-content\/uploads\/*","\/wp-content\/*","\/wp-content\/plugins\/*","\/wp-content\/themes\/generatepress\/*","\/*\\?(.+)"]}},{"not":{"selector_matches":"a[rel~=\"nofollow\"]"}},{"not":{"selector_matches":".no-prefetch, .no-prefetch a"}}]},"eagerness":"conservative"}]}
+</script>
+	<script type="rocketlazyloadscript"
+		id="generate-a11y">!function(){"use strict";if("querySelector"in document&&"addEventListener"in window){var e=document.body;e.addEventListener("mousedown",function(){e.classList.add("using-mouse")}),e.addEventListener("keydown",function(){e.classList.remove("using-mouse")})}}();</script>
+	<script type="rocketlazyloadscript">
+				const lazyloadRunObserver = () => {
+					const lazyloadBackgrounds = document.querySelectorAll( `.e-con.e-parent:not(.e-lazyloaded)` );
+					const lazyloadBackgroundObserver = new IntersectionObserver( ( entries ) => {
+						entries.forEach( ( entry ) => {
+							if ( entry.isIntersecting ) {
+								let lazyloadBackground = entry.target;
+								if( lazyloadBackground ) {
+									lazyloadBackground.classList.add( 'e-lazyloaded' );
+								}
+								lazyloadBackgroundObserver.unobserve( entry.target );
+							}
+						});
+					}, { rootMargin: '200px 0px 200px 0px' } );
+					lazyloadBackgrounds.forEach( ( lazyloadBackground ) => {
+						lazyloadBackgroundObserver.observe( lazyloadBackground );
+					} );
+				};
+				const events = [
+					'DOMContentLoaded',
+					'elementor/lazyload/observe',
+				];
+				events.forEach( ( event ) => {
+					document.addEventListener( event, lazyloadRunObserver );
+				} );
+			</script>
+	<script id="generate-offside-js-extra">
+		var offSide = { "side": "left" };
+	</script>
+	<script type="rocketlazyloadscript"
+		data-rocket-src="/wp-content/plugins/gp-premium/menu-plus/functions/js/offside.min.js?ver=2.5.5"
+		id="generate-offside-js" data-rocket-defer defer></script>
+	<script type="rocketlazyloadscript" id="rocket-browser-checker-js-after">
+"use strict";var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||!1,descriptor.configurable=!0,"value"in descriptor&&(descriptor.writable=!0),Object.defineProperty(target,descriptor.key,descriptor)}}return function(Constructor,protoProps,staticProps){return protoProps&&defineProperties(Constructor.prototype,protoProps),staticProps&&defineProperties(Constructor,staticProps),Constructor}}();function _classCallCheck(instance,Constructor){if(!(instance instanceof Constructor))throw new TypeError("Cannot call a class as a function")}var RocketBrowserCompatibilityChecker=function(){function RocketBrowserCompatibilityChecker(options){_classCallCheck(this,RocketBrowserCompatibilityChecker),this.passiveSupported=!1,this._checkPassiveOption(this),this.options=!!this.passiveSupported&&options}return _createClass(RocketBrowserCompatibilityChecker,[{key:"_checkPassiveOption",value:function(self){try{var options={get passive(){return!(self.passiveSupported=!0)}};window.addEventListener("test",null,options),window.removeEventListener("test",null,options)}catch(err){self.passiveSupported=!1}}},{key:"initRequestIdleCallback",value:function(){!1 in window&&(window.requestIdleCallback=function(cb){var start=Date.now();return setTimeout(function(){cb({didTimeout:!1,timeRemaining:function(){return Math.max(0,50-(Date.now()-start))}})},1)}),!1 in window&&(window.cancelIdleCallback=function(id){return clearTimeout(id)})}},{key:"isDataSaverModeOn",value:function(){return"connection"in navigator&&!0===navigator.connection.saveData}},{key:"supportsLinkPrefetch",value:function(){var elem=document.createElement("link");return elem.relList&&elem.relList.supports&&elem.relList.supports("prefetch")&&window.IntersectionObserver&&"isIntersecting"in IntersectionObserverEntry.prototype}},{key:"isSlowConnection",value:function(){return"connection"in navigator&&"effectiveType"in navigator.connection&&("2g"===navigator.connection.effectiveType||"slow-2g"===navigator.connection.effectiveType)}}]),RocketBrowserCompatibilityChecker}();
+</script>
+	<script id="rocket-preload-links-js-extra">
+		var RocketPreloadLinksConfig = { "excludeUris": "\/(?:.+\/)?feed(?:\/(?:.+\/?)?)?$|\/(?:.+\/)?embed\/|\/(index.php\/)?(.*)wp-json(\/.*|$)|\/refer\/|\/go\/|\/recommend\/|\/recommends\/", "usesTrailingSlash": "1", "imageExt": "jpg|jpeg|gif|png|tiff|bmp|webp|avif|pdf|doc|docx|xls|xlsx|php", "fileExt": "jpg|jpeg|gif|png|tiff|bmp|webp|avif|pdf|doc|docx|xls|xlsx|php|html|htm", "siteUrl": "https:\/\/educate.co.id", "onHoverDelay": "100", "rateThrottle": "3" };
+	</script>
+	<script type="rocketlazyloadscript" id="rocket-preload-links-js-after">
+(function() {
+"use strict";var r="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e},e=function(){function i(e,t){for(var n=0;n<t.length;n++){var i=t[n];i.enumerable=i.enumerable||!1,i.configurable=!0,"value"in i&&(i.writable=!0),Object.defineProperty(e,i.key,i)}}return function(e,t,n){return t&&i(e.prototype,t),n&&i(e,n),e}}();function i(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}var t=function(){function n(e,t){i(this,n),this.browser=e,this.config=t,this.options=this.browser.options,this.prefetched=new Set,this.eventTime=null,this.threshold=1111,this.numOnHover=0}return e(n,[{key:"init",value:function(){!this.browser.supportsLinkPrefetch()||this.browser.isDataSaverModeOn()||this.browser.isSlowConnection()||(this.regex={excludeUris:RegExp(this.config.excludeUris,"i"),images:RegExp(".("+this.config.imageExt+")$","i"),fileExt:RegExp(".("+this.config.fileExt+")$","i")},this._initListeners(this))}},{key:"_initListeners",value:function(e){-1<this.config.onHoverDelay&&document.addEventListener("mouseover",e.listener.bind(e),e.listenerOptions),document.addEventListener("mousedown",e.listener.bind(e),e.listenerOptions),document.addEventListener("touchstart",e.listener.bind(e),e.listenerOptions)}},{key:"listener",value:function(e){var t=e.target.closest("a"),n=this._prepareUrl(t);if(null!==n)switch(e.type){case"mousedown":case"touchstart":this._addPrefetchLink(n);break;case"mouseover":this._earlyPrefetch(t,n,"mouseout")}}},{key:"_earlyPrefetch",value:function(t,e,n){var i=this,r=setTimeout(function(){if(r=null,0===i.numOnHover)setTimeout(function(){return i.numOnHover=0},1e3);else if(i.numOnHover>i.config.rateThrottle)return;i.numOnHover++,i._addPrefetchLink(e)},this.config.onHoverDelay);t.addEventListener(n,function e(){t.removeEventListener(n,e,{passive:!0}),null!==r&&(clearTimeout(r),r=null)},{passive:!0})}},{key:"_addPrefetchLink",value:function(i){return this.prefetched.add(i.href),new Promise(function(e,t){var n=document.createElement("link");n.rel="prefetch",n.href=i.href,n.onload=e,n.onerror=t,document.head.appendChild(n)}).catch(function(){})}},{key:"_prepareUrl",value:function(e){if(null===e||"object"!==(void 0===e?"undefined":r(e))||!1 in e||-1===["http:","https:"].indexOf(e.protocol))return null;var t=e.href.substring(0,this.config.siteUrl.length),n=this._getPathname(e.href,t),i={original:e.href,protocol:e.protocol,origin:t,pathname:n,href:t+n};return this._isLinkOk(i)?i:null}},{key:"_getPathname",value:function(e,t){var n=t?e.substring(this.config.siteUrl.length):e;return n.startsWith("/")||(n="/"+n),this._shouldAddTrailingSlash(n)?n+"/":n}},{key:"_shouldAddTrailingSlash",value:function(e){return this.config.usesTrailingSlash&&!e.endsWith("/")&&!this.regex.fileExt.test(e)}},{key:"_isLinkOk",value:function(e){return null!==e&&"object"===(void 0===e?"undefined":r(e))&&(!this.prefetched.has(e.href)&&e.origin===this.config.siteUrl&&-1===e.href.indexOf("?")&&-1===e.href.indexOf("#")&&!this.regex.excludeUris.test(e.href)&&!this.regex.images.test(e.href))}}],[{key:"run",value:function(){"undefined"!=typeof RocketPreloadLinksConfig&&new n(new RocketBrowserCompatibilityChecker({capture:!0,passive:!0}),RocketPreloadLinksConfig).init()}}]),n}();t.run();
+}());
+</script>
+	<script id="rocket_lazyload_css-js-extra">
+		var rocket_lazyload_css_data = { "threshold": "300" };
+	</script>
+	<script id="rocket_lazyload_css-js-after">
+		!function o(n, c, a) { function u(t, e) { if (!c[t]) { if (!n[t]) { var r = "function" == typeof require && require; if (!e && r) return r(t, !0); if (s) return s(t, !0); throw (e = new Error("Cannot find module '" + t + "'")).code = "MODULE_NOT_FOUND", e } r = c[t] = { exports: {} }, n[t][0].call(r.exports, function (e) { return u(n[t][1][e] || e) }, r, r.exports, o, n, c, a) } return c[t].exports } for (var s = "function" == typeof require && require, e = 0; e < a.length; e++)u(a[e]); return u }({ 1: [function (e, t, r) { "use strict"; { const c = "undefined" == typeof rocket_pairs ? [] : rocket_pairs, a = (("undefined" == typeof rocket_excluded_pairs ? [] : rocket_excluded_pairs).map(t => { var e = t.selector; document.querySelectorAll(e).forEach(e => { e.setAttribute("data-rocket-lazy-bg-" + t.hash, "excluded") }) }), document.querySelector("#wpr-lazyload-bg-container")); var o = rocket_lazyload_css_data.threshold || 300; const u = new IntersectionObserver(e => { e.forEach(t => { t.isIntersecting && c.filter(e => t.target.matches(e.selector)).map(t => { var e; t && ((e = document.createElement("style")).textContent = t.style, a.insertAdjacentElement("afterend", e), t.elements.forEach(e => { u.unobserve(e), e.setAttribute("data-rocket-lazy-bg-" + t.hash, "loaded") })) }) }) }, { rootMargin: o + "px" }); function n() { 0 < (0 < arguments.length && void 0 !== arguments[0] ? arguments[0] : []).length && c.forEach(t => { try { document.querySelectorAll(t.selector).forEach(e => { "loaded" !== e.getAttribute("data-rocket-lazy-bg-" + t.hash) && "excluded" !== e.getAttribute("data-rocket-lazy-bg-" + t.hash) && (u.observe(e), (t.elements ||= []).push(e)) }) } catch (e) { console.error(e) } }) } n(), function () { const r = window.MutationObserver; return function (e, t) { if (e && 1 === e.nodeType) return (t = new r(t)).observe(e, { attributes: !0, childList: !0, subtree: !0 }), t } }()(document.querySelector("body"), n) } }, {}] }, {}, [1]);
+	</script>
+	<!--[if lte IE 11]>
+<script src="/wp-content/themes/generatepress/assets/js/classList.min.js?ver=3.4.0" id="generate-classlist-js"></script>
+<![endif]-->
+	<script id="generate-menu-js-extra">
+		var generatepressMenu = { "toggleOpenedSubMenus": "1", "openSubMenuLabel": "Open Sub-Menu", "closeSubMenuLabel": "Close Sub-Menu" };
+	</script>
+	<script type="rocketlazyloadscript"
+		data-rocket-src="/wp-content/themes/generatepress/assets/js/menu.min.js?ver=3.4.0"
+		id="generate-menu-js" data-rocket-defer defer></script>
+	<script type="rocketlazyloadscript"
+		data-rocket-src="/wp-content/plugins/elementor/assets/js/webpack.runtime.min.js?ver=3.32.4"
+		id="elementor-webpack-runtime-js" data-rocket-defer defer></script>
+	<script type="rocketlazyloadscript"
+		data-rocket-src="/wp-content/plugins/elementor/assets/js/frontend-modules.min.js?ver=3.32.4"
+		id="elementor-frontend-modules-js" data-rocket-defer defer></script>
+	<script type="rocketlazyloadscript"
+		data-rocket-src="/wp-includes/js/jquery/ui/core.min.js?ver=1.13.3" id="jquery-ui-core-js"
+		data-rocket-defer defer></script>
+	<script id="elementor-frontend-js-extra">
+		var uael_particles_script = { "uael_particles_url": "https:\/\/educate.co.id\/wp-content\/plugins\/ultimate-elementor\/assets\/min-js\/uael-particles.min.js", "particles_url": "https:\/\/educate.co.id\/wp-content\/plugins\/ultimate-elementor\/assets\/lib\/particles\/particles.min.js", "snowflakes_image": "https:\/\/educate.co.id\/wp-content\/plugins\/ultimate-elementor\/assets\/img\/snowflake.svg", "gift": "https:\/\/educate.co.id\/wp-content\/plugins\/ultimate-elementor\/assets\/img\/gift.png", "tree": "https:\/\/educate.co.id\/wp-content\/plugins\/ultimate-elementor\/assets\/img\/tree.png", "skull": "https:\/\/educate.co.id\/wp-content\/plugins\/ultimate-elementor\/assets\/img\/skull.png", "ghost": "https:\/\/educate.co.id\/wp-content\/plugins\/ultimate-elementor\/assets\/img\/ghost.png", "moon": "https:\/\/educate.co.id\/wp-content\/plugins\/ultimate-elementor\/assets\/img\/moon.png", "bat": "https:\/\/educate.co.id\/wp-content\/plugins\/ultimate-elementor\/assets\/img\/bat.png", "pumpkin": "https:\/\/educate.co.id\/wp-content\/plugins\/ultimate-elementor\/assets\/img\/pumpkin.png" };
+	</script>
+	<script type="rocketlazyloadscript" id="elementor-frontend-js-before">
+var elementorFrontendConfig = {"environmentMode":{"edit":false,"wpPreview":false,"isScriptDebug":false},"i18n":{"shareOnFacebook":"Share on Facebook","shareOnTwitter":"Share on Twitter","pinIt":"Pin it","download":"Download","downloadImage":"Download image","fullscreen":"Fullscreen","zoom":"Zoom","share":"Share","playVideo":"Play Video","previous":"Previous","next":"Next","close":"Close","a11yCarouselPrevSlideMessage":"Previous slide","a11yCarouselNextSlideMessage":"Next slide","a11yCarouselFirstSlideMessage":"This is the first slide","a11yCarouselLastSlideMessage":"This is the last slide","a11yCarouselPaginationBulletMessage":"Go to slide"},"is_rtl":false,"breakpoints":{"xs":0,"sm":480,"md":768,"lg":1025,"xl":1440,"xxl":1600},"responsive":{"breakpoints":{"mobile":{"label":"Mobile Portrait","value":767,"default_value":767,"direction":"max","is_enabled":true},"mobile_extra":{"label":"Mobile Landscape","value":880,"default_value":880,"direction":"max","is_enabled":false},"tablet":{"label":"Tablet Portrait","value":1024,"default_value":1024,"direction":"max","is_enabled":true},"tablet_extra":{"label":"Tablet Landscape","value":1200,"default_value":1200,"direction":"max","is_enabled":false},"laptop":{"label":"Laptop","value":1366,"default_value":1366,"direction":"max","is_enabled":false},"widescreen":{"label":"Widescreen","value":2400,"default_value":2400,"direction":"min","is_enabled":false}},"hasCustomBreakpoints":false},"version":"3.32.4","is_static":false,"experimentalFeatures":{"e_font_icon_svg":true,"additional_custom_breakpoints":true,"container":true,"theme_builder_v2":true,"nested-elements":true,"home_screen":true,"global_classes_should_enforce_capabilities":true,"e_variables":true,"cloud-library":true,"e_opt_in_v4_page":true,"import-export-customization":true,"mega-menu":true,"e_pro_variables":true},"urls":{"assets":"https:\/\/educate.co.id\/wp-content\/plugins\/elementor\/assets\/","ajaxurl":"https:\/\/educate.co.id\/wp-admin\/admin-ajax.php","uploadUrl":"https:\/\/educate.co.id\/wp-content\/uploads"},"nonces":{"floatingButtonsClickTracking":"bf3c9ca329"},"swiperClass":"swiper","settings":{"page":[],"editorPreferences":[]},"kit":{"active_breakpoints":["viewport_mobile","viewport_tablet"],"global_image_lightbox":"yes","lightbox_enable_counter":"yes","lightbox_enable_fullscreen":"yes","lightbox_enable_zoom":"yes","lightbox_enable_share":"yes","lightbox_title_src":"title","lightbox_description_src":"description"},"post":{"id":49801,"title":"Blogs%20-%20Educate","excerpt":"","featuredImage":false}};
+</script>
+	<script type="rocketlazyloadscript"
+		data-rocket-src="/wp-content/plugins/elementor/assets/js/frontend.min.js?ver=3.32.4" id="elementor-frontend-js"
+		data-rocket-defer defer></script>
+	<script type="rocketlazyloadscript" id="elementor-frontend-js-after">window.addEventListener('DOMContentLoaded', function() {
+window.scope_array = [];
+								window.backend = 0;
+								jQuery.cachedScript = function( url, options ) {
+									// Allow user to set any option except for dataType, cache, and url.
+									options = jQuery.extend( options || {}, {
+										dataType: "script",
+										cache: true,
+										url: url
+									});
+									// Return the jqXHR object so we can chain callbacks.
+									return jQuery.ajax( options );
+								};
+							    jQuery( window ).on( "elementor/frontend/init", function() {
+									elementorFrontend.hooks.addAction( "frontend/element_ready/global", function( $scope, $ ){
+										if ( "undefined" == typeof $scope ) {
+												return;
+										}
+										if ( $scope.hasClass( "uael-particle-yes" ) ) {
+											window.scope_array.push( $scope );
+											$scope.find(".uael-particle-wrapper").addClass("js-is-enabled");
+										}else{
+											return;
+										}
+										if(elementorFrontend.isEditMode() && $scope.find(".uael-particle-wrapper").hasClass("js-is-enabled") && window.backend == 0 ){
+											var uael_url = uael_particles_script.uael_particles_url;
+
+											jQuery.cachedScript( uael_url );
+											window.backend = 1;
+										}else if(elementorFrontend.isEditMode()){
+											var uael_url = uael_particles_script.uael_particles_url;
+											jQuery.cachedScript( uael_url ).done(function(){
+												var flag = true;
+											});
+										}
+									});
+								});
+								 jQuery( document ).on( "ready elementor/popup/show", () => {
+									if ( jQuery.find( ".uael-particle-yes" ).length < 1 ) {
+										return;
+									}
+									var uael_url = uael_particles_script.uael_particles_url;
+									jQuery.cachedScript = function( url, options ) {
+										// Allow user to set any option except for dataType, cache, and url.
+										options = jQuery.extend( options || {}, {
+											dataType: "script",
+											cache: true,
+											url: url
+										});
+										// Return the jqXHR object so we can chain callbacks.
+										return jQuery.ajax( options );
+									};
+									jQuery.cachedScript( uael_url );
+								});	
+});</script>
+	<script type="rocketlazyloadscript"
+		data-rocket-src="/wp-content/plugins/elementor-pro/assets/lib/sticky/jquery.sticky.min.js?ver=3.32.2"
+		id="e-sticky-js" data-rocket-defer defer></script>
+	<script type="rocketlazyloadscript"
+		data-rocket-src="/wp-includes/js/imagesloaded.min.js?ver=5.0.0" id="imagesloaded-js"
+		data-rocket-defer defer></script>
+	<script type="rocketlazyloadscript"
+		data-rocket-src="/wp-content/plugins/elementor-pro/assets/js/webpack-pro.runtime.min.js?ver=3.32.2"
+		id="elementor-pro-webpack-runtime-js" data-rocket-defer defer></script>
+	<script type="rocketlazyloadscript"
+		data-rocket-src="/wp-includes/js/dist/hooks.min.js?ver=4d63a3d491d11ffd8ac6"
+		id="wp-hooks-js"></script>
+	<script type="rocketlazyloadscript"
+		data-rocket-src="/wp-includes/js/dist/i18n.min.js?ver=5e580eb46a90c2b997e6"
+		id="wp-i18n-js"></script>
+	<script type="rocketlazyloadscript" id="wp-i18n-js-after">
+wp.i18n.setLocaleData( { 'text direction\u0004ltr': [ 'ltr' ] } );
+</script>
+	<script type="rocketlazyloadscript" id="elementor-pro-frontend-js-before">
+var ElementorProFrontendConfig = {"ajaxurl":"https:\/\/educate.co.id\/wp-admin\/admin-ajax.php","nonce":"2fb13b6b89","urls":{"assets":"https:\/\/educate.co.id\/wp-content\/plugins\/elementor-pro\/assets\/","rest":"https:\/\/educate.co.id\/wp-json\/"},"settings":{"lazy_load_background_images":true},"popup":{"hasPopUps":false},"shareButtonsNetworks":{"facebook":{"title":"Facebook","has_counter":true},"twitter":{"title":"Twitter"},"linkedin":{"title":"LinkedIn","has_counter":true},"pinterest":{"title":"Pinterest","has_counter":true},"reddit":{"title":"Reddit","has_counter":true},"vk":{"title":"VK","has_counter":true},"odnoklassniki":{"title":"OK","has_counter":true},"tumblr":{"title":"Tumblr"},"digg":{"title":"Digg"},"skype":{"title":"Skype"},"stumbleupon":{"title":"StumbleUpon","has_counter":true},"mix":{"title":"Mix"},"telegram":{"title":"Telegram"},"pocket":{"title":"Pocket","has_counter":true},"xing":{"title":"XING","has_counter":true},"whatsapp":{"title":"WhatsApp"},"email":{"title":"Email"},"print":{"title":"Print"},"x-twitter":{"title":"X"},"threads":{"title":"Threads"}},"facebook_sdk":{"lang":"en_US","app_id":""},"lottie":{"defaultAnimationUrl":"https:\/\/educate.co.id\/wp-content\/plugins\/elementor-pro\/modules\/lottie\/assets\/animations\/default.json"}};
+</script>
+	<script type="rocketlazyloadscript"
+		data-rocket-src="/wp-content/plugins/elementor-pro/assets/js/frontend.min.js?ver=3.32.2"
+		id="elementor-pro-frontend-js" data-rocket-defer defer></script>
+	<script type="rocketlazyloadscript"
+		data-rocket-src="/wp-content/plugins/elementor-pro/assets/js/elements-handlers.min.js?ver=3.32.2"
+		id="pro-elements-handlers-js" data-rocket-defer defer></script>
+	<script>window.lazyLoadOptions = [{ elements_selector: "img[data-lazy-src],.rocket-lazyload,iframe[data-lazy-src]", data_src: "lazy-src", data_srcset: "lazy-srcset", data_sizes: "lazy-sizes", class_loading: "lazyloading", class_loaded: "lazyloaded", threshold: 300, callback_loaded: function (element) { if (element.tagName === "IFRAME" && element.dataset.rocketLazyload == "fitvidscompatible") { if (element.classList.contains("lazyloaded")) { if (typeof window.jQuery != "undefined") { if (jQuery.fn.fitVids) { jQuery(element).parent().fitVids() } } } } } }, { elements_selector: ".rocket-lazyload", data_src: "lazy-src", data_srcset: "lazy-srcset", data_sizes: "lazy-sizes", class_loading: "lazyloading", class_loaded: "lazyloaded", threshold: 300, }]; window.addEventListener('LazyLoad::Initialized', function (e) {
+			var lazyLoadInstance = e.detail.instance; if (window.MutationObserver) {
+				var observer = new MutationObserver(function (mutations) {
+					var image_count = 0; var iframe_count = 0; var rocketlazy_count = 0; mutations.forEach(function (mutation) {
+						for (var i = 0; i < mutation.addedNodes.length; i++) {
+							if (typeof mutation.addedNodes[i].getElementsByTagName !== 'function') { continue }
+							if (typeof mutation.addedNodes[i].getElementsByClassName !== 'function') { continue }
+							images = mutation.addedNodes[i].getElementsByTagName('img'); is_image = mutation.addedNodes[i].tagName == "IMG"; iframes = mutation.addedNodes[i].getElementsByTagName('iframe'); is_iframe = mutation.addedNodes[i].tagName == "IFRAME"; rocket_lazy = mutation.addedNodes[i].getElementsByClassName('rocket-lazyload'); image_count += images.length; iframe_count += iframes.length; rocketlazy_count += rocket_lazy.length; if (is_image) { image_count += 1 }
+							if (is_iframe) { iframe_count += 1 }
+						}
+					}); if (image_count > 0 || iframe_count > 0 || rocketlazy_count > 0) { lazyLoadInstance.update() }
+				}); var b = document.getElementsByTagName("body")[0]; var config = { childList: !0, subtree: !0 }; observer.observe(b, config)
+			}
+		}, !1)</script>
+	<script data-no-minify="1" async
+		src="/wp-content/plugins/wp-rocket/assets/js/lazyload/17.8.3/lazyload.min.js"></script>
+	<script>(() => { class RocketElementorPreload { constructor() { this.deviceMode = document.createElement("span"), this.deviceMode.id = "elementor-device-mode-wpr", this.deviceMode.setAttribute("class", "elementor-screen-only"), document.body.appendChild(this.deviceMode) } t() { let t = getComputedStyle(this.deviceMode, ":after").content.replace(/"/g, ""); this.animationSettingKeys = this.i(t), document.querySelectorAll(".elementor-invisible[data-settings]").forEach((t => { const e = t.getBoundingClientRect(); if (e.bottom >= 0 && e.top <= window.innerHeight) try { this.o(t) } catch (t) { } })) } o(t) { const e = JSON.parse(t.dataset.settings), i = e.m || e.animation_delay || 0, n = e[this.animationSettingKeys.find((t => e[t]))]; if ("none" === n) return void t.classList.remove("elementor-invisible"); t.classList.remove(n), this.currentAnimation && t.classList.remove(this.currentAnimation), this.currentAnimation = n; let o = setTimeout((() => { t.classList.remove("elementor-invisible"), t.classList.add("animated", n), this.l(t, e) }), i); window.addEventListener("rocket-startLoading", (function () { clearTimeout(o) })) } i(t = "mobile") { const e = [""]; switch (t) { case "mobile": e.unshift("_mobile"); case "tablet": e.unshift("_tablet"); case "desktop": e.unshift("_desktop") }const i = []; return ["animation", "_animation"].forEach((t => { e.forEach((e => { i.push(t + e) })) })), i } l(t, e) { this.i().forEach((t => delete e[t])), t.dataset.settings = JSON.stringify(e) } static run() { const t = new RocketElementorPreload; requestAnimationFrame(t.t.bind(t)) } } document.addEventListener("DOMContentLoaded", RocketElementorPreload.run) })();</script>
+
+	<script src="/js/main.js"></script>
+</body>
+
+</html>
+
+<!-- This website is like a Rocket, isn't it? Performance optimized by WP Rocket. Learn more: https://wp-rocket.me - Debug: cached@1761254368 -->

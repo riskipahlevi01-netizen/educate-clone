@@ -17,11 +17,14 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   // Deteksi apakah halaman di root atau subfolder (tentang-kami, blogs, dll)
   const basePath =
-      window.location.pathname.includes("/tentang-kami") ||
+    window.location.pathname.includes("/tentang-kami") ||
       window.location.pathname.includes("/blogs") ||
       window.location.pathname.includes("/bimbel-spesialis-kedokteran") ||
-      window.location.pathname.includes("/lolos-ptn-favorit")      ||
-      window.location.pathname.includes("/lolos-sma-favorit")      ||
+      window.location.pathname.includes("/lolos-ptn-favorit") ||
+      window.location.pathname.includes("/lolos-sma-favorit") ||
+      window.location.pathname.includes("/nilai-minimal-masuk-itb") ||
+      window.location.pathname.includes("/nilai-minimal-masuk-ui") ||
+      window.location.pathname.includes("/nilai-minimal-masuk-ugm") ||
       window.location.pathname.includes("/kontak-kami")
       ? ".."
       : ".";
