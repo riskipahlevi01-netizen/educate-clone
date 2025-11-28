@@ -30,11 +30,11 @@ document.addEventListener("DOMContentLoaded", async () => {
       : ".";
 
   // Muat header dan footer
-  await loadComponent("header", `${basePath}/components/header.html`);
+  // await loadComponent("header", `${basePath}/components/header.html`);
   await loadComponent("footer", `${basePath}/components/footer.html`);
 
-  // Setelah header/footer termuat, jalankan seluruh fitur website
-  if (typeof EducateWebsite === "function") {
-    new EducateWebsite();
-  }
+  // // Setelah header/footer termuat, jalankan seluruh fitur website
+  // if (typeof EducateWebsite === "function") {
+  //   new EducateWebsite();
+  // }
 });
